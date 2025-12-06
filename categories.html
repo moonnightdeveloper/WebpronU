@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Browse All Content | WebpronU</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Browse all categories of premium adult content. HD videos, 4K content, live shows, photo galleries, and exclusive collections.">
+    <meta name="keywords" content="adult categories, content types, video categories, photo galleries, live shows">
+    <meta name="rating" content="adult">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="age-verification" content="18">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Categories - Premium Adult Content">
+    <meta property="og:description" content="Browse all categories of exclusive adult entertainment">
+    <meta property="og:type" content="website">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    
+    <style>
+        /* Categories Page Specific Styles */
+        .categories-hero {
+            /* background: linear-gradient(135deg, #0f3460, #16213e, #1a1a2e); */
+            background-image: url(./image/hardcore.gif);
+            background-size: cover;
+            padding: 100px 0 100px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .categories-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,51,102,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(108,99,255,0.15) 0%, transparent 50%);
+        }
+        
+        .categories-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .categories-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #ff6699);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .categories-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .categories-search {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-box-categories {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 5px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .search-box-categories input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 15px 25px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .search-box-categories input:focus {
+            outline: none;
+        }
+        
+        .search-box-categories button {
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 0 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-box-categories button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Main Categories Grid */
+        .main-categories-section {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .section-title-categories {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .main-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .main-category-card {
+            background: #1e1e1e;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            height: 300px;
+        }
+        
+        .main-category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .main-category-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .main-category-card:hover .main-category-bg {
+            transform: scale(1.1);
+        }
+        
+        .main-category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+        }
+        
+        .main-category-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,51,102,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .main-category-icon i {
+            font-size: 28px;
+            color: #ff3366;
+        }
+        
+        .main-category-content h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .main-category-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+        }
+        
+        .main-category-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .main-category-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Subcategories Section */
+        .subcategories-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        
+        .subcategories-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .subcategory-tab {
+            background: #2d2d2d;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+        
+        .subcategory-tab.active {
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+        }
+        
+        .subcategory-tab:hover:not(.active) {
+            background: #3d3d3d;
+        }
+        
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            display: none;
+        }
+        
+        .subcategories-grid.active {
+            display: grid;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .subcategory-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .subcategory-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff3366;
+            box-shadow: 0 10px 30px rgba(255,51,102,0.2);
+        }
+        
+        .subcategory-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(255,51,102,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .subcategory-icon i {
+            font-size: 32px;
+            color: #ff3366;
+        }
+        
+        .subcategory-card h4 {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .subcategory-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .subcategory-count {
+            display: inline-block;
+            background: rgba(255,51,102,0.2);
+            color: #ff6699;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Featured Collections */
+        .featured-collections {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .collections-slider {
+            position: relative;
+            padding: 0 60px;
+        }
+        
+        .collection-card {
+            background: #1e1e1e;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            position: relative;
+        }
+        
+        .collection-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .collection-card:hover .collection-bg {
+            transform: scale(1.1);
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .collection-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+        
+        .collection-content h3 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .collection-content p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .collection-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .collection-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Browse By Model Section */
+        .models-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        
+        .model-category-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .model-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .model-image {
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .model-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .model-category-card:hover .model-image img {
+            transform: scale(1.1);
+        }
+        
+        .model-info {
+            padding: 20px;
+        }
+        
+        .model-info h4 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .model-stats {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        /* Trending Tags */
+        .trending-tags {
+            padding: 60px 0;
+            background: #121212;
+        }
+        
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tag {
+            background: #2d2d2d;
+            color: rgba(255,255,255,0.7);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .tag:hover {
+            background: #ff3366;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .categories-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .categories-cta::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255,51,102,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(108,99,255,0.1) 0%, transparent 50%);
+            animation: float 30s infinite linear;
+        }
+        
+        .cta-content-categories {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title-categories {
+            font-size: 42px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle-categories {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .categories-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .categories-title {
+                font-size: 36px;
+            }
+            
+            .categories-subtitle {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+            
+            .main-categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-category-card {
+                height: 250px;
+            }
+            
+            .subcategories-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .collections-slider {
+                padding: 0 40px;
+            }
+            
+            .models-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .cta-title-categories {
+                font-size: 32px;
+            }
+            
+            .search-box-categories {
+                flex-direction: column;
+                background: transparent;
+                border: none;
+                padding: 0;
+            }
+            
+            .search-box-categories input {
+                background: rgba(255,255,255,0.1);
+                border-radius: 25px;
+                margin-bottom: 15px;
+            }
+            
+            .search-box-categories button {
+                border-radius: 25px;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .categories-title {
+                font-size: 28px;
+            }
+            
+            .section-title-categories {
+                font-size: 28px;
+            }
+            
+            .main-category-content h3 {
+                font-size: 20px;
+            }
+            
+            .subcategories-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+            
+            .subcategory-tab {
+                white-space: nowrap;
+            }
+            
+            .collection-content h3 {
+                font-size: 22px;
+            }
+            
+            .cta-title-categories {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Age Verification -->
+    <!-- <div id="age-verification" class="age-verification-modal">
+        <div class="verification-content">
+            <div class="verification-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Age Verification Required</h2>
+            </div>
+            <div class="verification-body">
+                <p>Browse categories only if you are 18+</p>
+                <div class="verification-actions">
+                    <button id="enter-site" class="btn btn-primary">
+                        <i class="fas fa-check-circle"></i> I AM 18 OR OLDER
+                    </button>
+                    <button id="exit-site" class="btn btn-secondary">
+                        <i class="fas fa-times-circle"></i> EXIT SITE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="site-announcement">
+                        <i class="fas fa-tags"></i>
+                        <span>Browse 50+ Categories of Premium Content!</span>
+                    </div>
+                    <div class="header-top-links">
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                        <a href="premium-offer.html"><i class="fas fa-crown"></i> Premium</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="index.html" class="logo">
+                            <img src="image/logo.png" alt="WebpronU" class="logo-img">
+                            <span class="logo-text">Webpron<span class="logo-highlight">U</span></span>
+                        </a>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="search-container">
+                        <form action="search.html" class="search-form" method="get">
+                            <div class="search-input-group">
+                                <input type="search" name="q" placeholder="Search categories or tags..." id="search-box">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- User Actions -->
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <button id="menu-toggle" class="action-btn menu-toggle">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-navigation">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="models.html" class="nav-link">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Models</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="new.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>New</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="trending.html" class="nav-link">
+                            <i class="fas fa-fire"></i>
+                            <span>Trending</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="premium-offer.html" class="nav-link premium">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-navigation">
+        <div class="mobile-nav-content">
+            <a href="index.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="categories.html" class="mobile-nav-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="models.html" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Models</span>
+            </a>
+            <a href="new.html" class="mobile-nav-item">
+                <i class="fas fa-newspaper"></i>
+                <span>New</span>
+            </a>
+            <a href="premium-offer.html" class="mobile-nav-item premium">
+                <i class="fas fa-crown"></i>
+                <span>Premium</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="categories-hero">
+            <div class="container">
+                <div class="categories-hero-content">
+                    <h1 class="categories-title">Browse All Categories</h1>
+                    <p class="categories-subtitle">
+                        Discover thousands of premium adult videos, photos, and live shows organized 
+                        into easy-to-browse categories. Find exactly what you're looking for.
+                    </p>
+                    
+                    <div class="categories-search">
+                        <div class="search-box-categories">
+                            <input type="search" placeholder="Search categories (e.g., HD, Solo, Live)">
+                            <button type="submit">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Categories -->
+        <section class="main-categories-section">
+            <div class="container">
+                <h2 class="section-title-categories">Main Categories</h2>
+                
+                <div class="main-categories-grid">
+                    <!-- HD Videos -->
+                    <a href="category-hd.html" class="main-category-card">
+                        <div class="main-category-bg" style="background-image: url('image/category-hd-bg.jpg');"></div>
+                        <div class="main-category-overlay">
+                            <div class="main-category-icon">
+                                <i class="fas fa-hd"></i>
+                            </div>
+                            <div class="main-category-content">
+                                <h3>HD Videos</h3>
+                                <p>Crystal clear 1080p quality videos</p>
+                                <div class="main-category-stats">
+                                    <span><i class="fas fa-video"></i> 1,200+ Videos</span>
+                                    <span><i class="fas fa-clock"></i> 500+ Hours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- 4K Ultra HD -->
+                    <a href="category-4k.html" class="main-category-card">
+                        <div class="main-category-bg" style="background-image: url('image/category-4k-bg.jpg');"></div>
+                        <div class="main-category-overlay">
+                            <div class="main-category-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="main-category-content">
+                                <h3>4K Ultra HD</h3>
+                                <p>Ultra high definition premium content</p>
+                                <div class="main-category-stats">
+                                    <span><i class="fas fa-video"></i> 800+ Videos</span>
+                                    <span><i class="fas fa-star"></i> Premium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Live Shows -->
+                    <a href="category-live.html" class="main-category-card">
+                        <div class="main-category-bg" style="background-image: url('image/category-live-bg.jpg');"></div>
+                        <div class="main-category-overlay">
+                            <div class="main-category-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <div class="main-category-content">
+                                <h3>Live Shows</h3>
+                                <p>Real-time interactive performances</p>
+                                <div class="main-category-stats">
+                                    <span><i class="fas fa-users"></i> Live Now</span>
+                                    <span><i class="fas fa-calendar"></i> Scheduled</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Photo Galleries -->
+                    <a href="category-photos.html" class="main-category-card">
+                        <div class="main-category-bg" style="background-image: url('image/category-photos-bg.jpg');"></div>
+                        <div class="main-category-overlay">
+                            <div class="main-category-icon">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <div class="main-category-content">
+                                <h3>Photo Galleries</h3>
+                                <p>High resolution photo collections</p>
+                                <div class="main-category-stats">
+                                    <span><i class="fas fa-camera"></i> 50,000+ Photos</span>
+                                    <span><i class="fas fa-star"></i> Exclusive</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subcategories -->
+        <section class="subcategories-section">
+            <div class="container">
+                <h2 class="section-title-categories">Browse by Type</h2>
+                
+                <div class="subcategories-tabs">
+                    <button class="subcategory-tab active" data-category="videos">Videos</button>
+                    <button class="subcategory-tab" data-category="photos">Photos</button>
+                    <button class="subcategory-tab" data-category="live">Live</button>
+                    <button class="subcategory-tab" data-category="premium">Premium</button>
+                    <button class="subcategory-tab" data-category="collections">Collections</button>
+                </div>
+                
+                <!-- Videos Subcategories -->
+                <div class="subcategories-grid active" id="videos-subcategories">
+                    <a href="category-solo.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h4>Solo Performances</h4>
+                        <p>Individual model performances</p>
+                        <span class="subcategory-count">450+ Videos</span>
+                    </a>
+                    
+                    <a href="category-couple.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h4>Couple Scenes</h4>
+                        <p>Intimate couple performances</p>
+                        <span class="subcategory-count">320+ Videos</span>
+                    </a>
+                    
+                    <a href="category-group.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Group Scenes</h4>
+                        <p>Multi-model performances</p>
+                        <span class="subcategory-count">180+ Videos</span>
+                    </a>
+                    
+                    <a href="category-professional.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h4>Professional</h4>
+                        <p>Studio quality productions</p>
+                        <span class="subcategory-count">210+ Videos</span>
+                    </a>
+                    
+                    <a href="category-amateur.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Amateur</h4>
+                        <p>Real authentic performances</p>
+                        <span class="subcategory-count">380+ Videos</span>
+                    </a>
+                    
+                    <a href="category-theme.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h4>Themed Videos</h4>
+                        <p>Roleplay and fantasy scenarios</p>
+                        <span class="subcategory-count">150+ Videos</span>
+                    </a>
+                </div>
+                
+                <!-- Photos Subcategories -->
+                <div class="subcategories-grid" id="photos-subcategories">
+                    <a href="category-glamour.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Glamour</h4>
+                        <p>Professional photo shoots</p>
+                        <span class="subcategory-count">15,000+ Photos</span>
+                    </a>
+                    
+                    <a href="category-boudoir.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h4>Boudoir</h4>
+                        <p>Intimate bedroom photography</p>
+                        <span class="subcategory-count">12,000+ Photos</span>
+                    </a>
+                    
+                    <a href="category-artistic.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Artistic</h4>
+                        <p>Creative and artistic nudes</p>
+                        <span class="subcategory-count">8,000+ Photos</span>
+                    </a>
+                    
+                    <a href="category-outdoor.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h4>Outdoor</h4>
+                        <p>Nature and outdoor photography</p>
+                        <span class="subcategory-count">5,000+ Photos</span>
+                    </a>
+                </div>
+                
+                <!-- Live Subcategories -->
+                <div class="subcategories-grid" id="live-subcategories">
+                    <a href="category-private.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Private Shows</h4>
+                        <p>One-on-one live performances</p>
+                        <span class="subcategory-count">Live Now</span>
+                    </a>
+                    
+                    <a href="category-group-show.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Group Shows</h4>
+                        <p>Multi-model live performances</p>
+                        <span class="subcategory-count">Scheduled</span>
+                    </a>
+                    
+                    <a href="category-theme-show.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h4>Themed Shows</h4>
+                        <p>Special themed live events</p>
+                        <span class="subcategory-count">Weekly</span>
+                    </a>
+                </div>
+                
+                <!-- Premium Subcategories -->
+                <div class="subcategories-grid" id="premium-subcategories">
+                    <a href="category-exclusive.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h4>Exclusive</h4>
+                        <p>Premium members only content</p>
+                        <span class="subcategory-count">Premium</span>
+                    </a>
+                    
+                    <a href="category-unreleased.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Unreleased</h4>
+                        <p>Early access to new content</p>
+                        <span class="subcategory-count">VIP Only</span>
+                    </a>
+                    
+                    <a href="category-custom.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h4>Custom Content</h4>
+                        <p>Personalized requests</p>
+                        <span class="subcategory-count">VIP Only</span>
+                    </a>
+                </div>
+                
+                <!-- Collections Subcategories -->
+                <div class="subcategories-grid" id="collections-subcategories">
+                    <a href="collection-best.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Best Of</h4>
+                        <p>Top rated content collection</p>
+                        <span class="subcategory-count">200+ Items</span>
+                    </a>
+                    
+                    <a href="collection-new.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h4>New Arrivals</h4>
+                        <p>Recently added content</p>
+                        <span class="subcategory-count">50+ New</span>
+                    </a>
+                    
+                    <a href="collection-trending.html" class="subcategory-card">
+                        <div class="subcategory-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h4>Trending Now</h4>
+                        <p>Currently popular content</p>
+                        <span class="subcategory-count">Hot</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collections">
+            <div class="container">
+                <h2 class="section-title-categories">Featured Collections</h2>
+                
+                <div class="collections-slider">
+                    <div class="swiper collectionsSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Collection 1 -->
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('image/collection-premium.jpg');"></div>
+                                    <div class="collection-overlay">
+                                        <span class="collection-badge">Premium Collection</span>
+                                        <div class="collection-content">
+                                            <h3>Ultimate Premium Experience</h3>
+                                            <p>Curated collection of our highest quality content featuring exclusive models and professional productions.</p>
+                                            <div class="collection-stats">
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-video"></i>
+                                                    <span>300+ Videos</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-images"></i>
+                                                    <span>5,000+ Photos</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-star"></i>
+                                                    <span>4.8 Rating</span>
+                                                </div>
+                                            </div>
+                                            <a href="collection-premium.html" class="btn btn-primary">
+                                                <i class="fas fa-play"></i> View Collection
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Collection 2 -->
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('image/collection-hd.jpg');"></div>
+                                    <div class="collection-overlay">
+                                        <span class="collection-badge">HD Collection</span>
+                                        <div class="collection-content">
+                                            <h3>HD Video Masterpieces</h3>
+                                            <p>Experience crystal clear 1080p quality with our curated HD video collection from top models.</p>
+                                            <div class="collection-stats">
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-video"></i>
+                                                    <span>500+ Videos</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>200+ Hours</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>1M+ Views</span>
+                                                </div>
+                                            </div>
+                                            <a href="collection-hd.html" class="btn btn-primary">
+                                                <i class="fas fa-play"></i> View Collection
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Collection 3 -->
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+                                    <div class="collection-bg" style="background-image: url('image/collection-live.jpg');"></div>
+                                    <div class="collection-overlay">
+                                        <span class="collection-badge">Live Collection</span>
+                                        <div class="collection-content">
+                                            <h3>Best Live Performances</h3>
+                                            <p>Recordings of our most popular live shows featuring interactive performances and exclusive content.</p>
+                                            <div class="collection-stats">
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-broadcast-tower"></i>
+                                                    <span>100+ Shows</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-users"></i>
+                                                    <span>50+ Models</span>
+                                                </div>
+                                                <div class="collection-stat">
+                                                    <i class="fas fa-heart"></i>
+                                                    <span>Top Rated</span>
+                                                </div>
+                                            </div>
+                                            <a href="collection-live.html" class="btn btn-primary">
+                                                <i class="fas fa-play"></i> View Collection
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Browse By Model -->
+        <section class="models-section">
+            <div class="container">
+                <h2 class="section-title-categories">Browse By Popular Model</h2>
+                
+                <div class="models-grid">
+                    <!-- Model 1 -->
+                    <a href="model-jojo.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/JOJO KISS.webp" alt="JOJO KISS">
+                        </div>
+                        <div class="model-info">
+                            <h4>JOJO KISS</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 45 Videos
+                            </div>
+                            <div class="subcategory-count">HD • 4K • Live</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Model 2 -->
+                    <a href="model-ella.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/ELLA KNOX.webp" alt="ELLA KNOX">
+                        </div>
+                        <div class="model-info">
+                            <h4>ELLA KNOX</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 32 Videos
+                            </div>
+                            <div class="subcategory-count">Premium • Exclusive</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Model 3 -->
+                    <a href="model-katrina.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/KATRINA JADE.webp" alt="KATRINA JADE">
+                        </div>
+                        <div class="model-info">
+                            <h4>KATRINA JADE</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 28 Videos
+                            </div>
+                            <div class="subcategory-count">Professional • HD</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Model 4 -->
+                    <a href="model-sophia.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/model-4.jpg" alt="SOPHIA LEE">
+                        </div>
+                        <div class="model-info">
+                            <h4>SOPHIA LEE</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 36 Videos
+                            </div>
+                            <div class="subcategory-count">Live • Amateur</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Model 5 -->
+                    <a href="model-maya.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/model-5.jpg" alt="MAYA KENDALL">
+                        </div>
+                        <div class="model-info">
+                            <h4>MAYA KENDALL</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 24 Videos
+                            </div>
+                            <div class="subcategory-count">Themed • Artistic</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Model 6 -->
+                    <a href="model-luna.html" class="model-category-card">
+                        <div class="model-image">
+                            <img src="image/model-6.jpg" alt="LUNA STAR">
+                        </div>
+                        <div class="model-info">
+                            <h4>LUNA STAR</h4>
+                            <div class="model-stats">
+                                <i class="fas fa-video"></i> 41 Videos
+                            </div>
+                            <div class="subcategory-count">4K • Premium</div>
+                        </div>
+                    </a>
+                    
+                    <!-- View All Models -->
+                    <a href="models.html" class="model-category-card" style="background: linear-gradient(135deg, #ff3366, #ff6699);">
+                        <div class="model-image" style="background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-users" style="font-size: 60px; color: white;"></i>
+                        </div>
+                        <div class="model-info">
+                            <h4>View All Models</h4>
+                            <div class="model-stats">
+                                500+ Professional Models
+                            </div>
+                            <div style="color: white; font-weight: 600;">
+                                <i class="fas fa-arrow-right"></i> Browse All
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Tags -->
+        <section class="trending-tags">
+            <div class="container">
+                <h2 class="section-title-categories" style="margin-bottom: 40px;">Popular Tags</h2>
+                
+                <div class="tags-container">
+                    <a href="tag-hd.html" class="tag">HD</a>
+                    <a href="tag-4k.html" class="tag">4K Ultra</a>
+                    <a href="tag-premium.html" class="tag">Premium</a>
+                    <a href="tag-exclusive.html" class="tag">Exclusive</a>
+                    <a href="tag-live.html" class="tag">Live</a>
+                    <a href="tag-solo.html" class="tag">Solo</a>
+                    <a href="tag-couple.html" class="tag">Couple</a>
+                    <a href="tag-group.html" class="tag">Group</a>
+                    <a href="tag-professional.html" class="tag">Professional</a>
+                    <a href="tag-amateur.html" class="tag">Amateur</a>
+                    <a href="tag-themed.html" class="tag">Themed</a>
+                    <a href="tag-outdoor.html" class="tag">Outdoor</a>
+                    <a href="tag-boudoir.html" class="tag">Boudoir</a>
+                    <a href="tag-glamour.html" class="tag">Glamour</a>
+                    <a href="tag-artistic.html" class="tag">Artistic</a>
+                    <a href="tag-new.html" class="tag">New Release</a>
+                    <a href="tag-trending.html" class="tag">Trending Now</a>
+                    <a href="tag-popular.html" class="tag">Most Popular</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="categories-cta">
+            <div class="container">
+                <div class="cta-content-categories">
+                    <h2 class="cta-title-categories">Can't Find What You're Looking For?</h2>
+                    <p class="cta-subtitle-categories">
+                        Upgrade to Premium for access to exclusive categories, custom content requests, 
+                        and priority support to help you find exactly what you want.
+                    </p>
+                    <a href="premium-offer.html" class="btn btn-primary btn-lg" style="font-size: 20px; padding: 20px 40px;">
+                        <i class="fas fa-crown"></i>
+                        Upgrade to Premium - 50% OFF
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="image/logo.png" alt="WebpronU">
+                            <span>WebpronU</span>
+                        </div>
+                        <p class="footer-description">
+                            Your premier destination for adult entertainment with 
+                            thousands of categories and premium content.
+                        </p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Quick Categories</h4>
+                        <ul>
+                            <li><a href="category-hd.html">HD Videos</a></li>
+                            <li><a href="category-4k.html">4K Ultra HD</a></li>
+                            <li><a href="category-live.html">Live Shows</a></li>
+                            <li><a href="category-photos.html">Photo Galleries</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Browse By</h4>
+                        <ul>
+                            <li><a href="models.html">Models</a></li>
+                            <li><a href="collections.html">Collections</a></li>
+                            <li><a href="trending.html">Trending</a></li>
+                            <li><a href="new.html">New Arrivals</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="report.html">Report Content</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="age-verification.html">Age Verification</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 WebpronU. All rights reserved. Adults only (18+)</p>
+                    <div class="footer-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>This site contains explicit adult content. All models are 18+.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    
+    <!-- Categories Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Age Verification
+            if (!localStorage.getItem('ageVerified')) {
+                document.getElementById('age-verification').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            document.getElementById('enter-site').addEventListener('click', function() {
+                localStorage.setItem('ageVerified', 'true');
+                document.getElementById('age-verification').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            document.getElementById('exit-site').addEventListener('click', function() {
+                window.location.href = 'https://www.google.com';
+            });
+
+            // Subcategory Tabs
+            const tabs = document.querySelectorAll('.subcategory-tab');
+            const subcategoryGrids = document.querySelectorAll('.subcategories-grid');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all subcategory grids
+                    subcategoryGrids.forEach(grid => {
+                        grid.classList.remove('active');
+                    });
+                    
+                    // Show selected subcategory grid
+                    const targetGrid = document.getElementById(`${category}-subcategories`);
+                    if (targetGrid) {
+                        targetGrid.classList.add('active');
+                    }
+                });
+            });
+
+            // Initialize collections slider
+            const collectionsSwiper = new Swiper('.collectionsSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('.search-box-categories input');
+            const searchButton = document.querySelector('.search-box-categories button');
+            
+            if (searchButton) {
+                searchButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        // In real implementation, this would redirect to search results
+                        // For now, we'll just show an alert
+                        alert(`Searching for categories containing: "${query}"`);
+                        searchInput.value = '';
+                    }
+                });
+                
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        searchButton.click();
+                    }
+                });
+            }
+
+            // Filter cards by search
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase().trim();
+                    const allCards = document.querySelectorAll('.subcategory-card, .main-category-card, .model-category-card');
+                    
+                    allCards.forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        if (query === '' || text.includes(query)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            }
+
+            // Smooth hover effects
+            const cards = document.querySelectorAll('.main-category-card, .subcategory-card, .model-category-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+
+            // Add CSS for animations
+            const style = document.createElement('style');
+            style.textContent = `
+                .main-category-card,
+                .subcategory-card,
+                .model-category-card {
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
+                
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .main-category-card:nth-child(1) { animation-delay: 0.1s; }
+                .main-category-card:nth-child(2) { animation-delay: 0.2s; }
+                .main-category-card:nth-child(3) { animation-delay: 0.3s; }
+                .main-category-card:nth-child(4) { animation-delay: 0.4s; }
+                
+                .subcategory-card {
+                    animation: fadeInUp 0.5s ease forwards;
+                }
+                
+                @keyframes pulse {
+                    0%, 100% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                }
+                
+                .collection-badge {
+                    animation: pulse 2s infinite;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+</body>
+</html>

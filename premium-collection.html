@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Collection - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .premium-collection-hero {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(18, 18, 18, 0.9));
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .premium-feature {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            background: rgba(255,215,0,0.1);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+        
+        .premium-feature i {
+            color: #FFD700;
+            font-size: 2.4rem;
+        }
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .collection-card {
+            background: linear-gradient(135deg, rgba(255,215,0,0.05), var(--dark-light));
+            border: 2px solid rgba(255,215,0,0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-8px);
+            border-color: #FFD700;
+            box-shadow: 0 8px 32px rgba(255,215,0,0.2);
+        }
+        
+        .collection-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: var(--space-md);
+        }
+        
+        .price-tag {
+            font-size: 3.6rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin: var(--space-md) 0;
+        }
+        
+        .exclusive-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--light);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Premium Hero -->
+        <section class="premium-collection-hero">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Premium</span>
+                    <span class="title-line" style="color: #FFD700;">Collection</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Exclusive content not available anywhere else
+                </p>
+                <div class="hero-actions">
+                    <a href="#collections" class="btn btn-premium btn-lg">
+                        <i class="fas fa-crown"></i> View Collections
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Features -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-gem"></i>
+                        Premium Benefits
+                    </h2>
+                </div>
+                
+                <div class="premium-features">
+                    <div class="premium-feature">
+                        <i class="fas fa-unlock-alt"></i>
+                        <div>
+                            <h4>Exclusive Access</h4>
+                            <p>Content available only to premium members</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-feature">
+                        <i class="fas fa-download"></i>
+                        <div>
+                            <h4>Unlimited Downloads</h4>
+                            <p>Download all content for offline viewing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-feature">
+                        <i class="fas fa-hd"></i>
+                        <div>
+                            <h4>4K Ultra HD</h4>
+                            <p>Highest quality streaming available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Grid -->
+        <section class="section" id="collections">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-box-open"></i>
+                        Premium Collections
+                    </h2>
+                </div>
+                
+                <div class="collection-grid">
+                    <!-- Collection 1 -->
+                    <div class="collection-card">
+                        <span class="collection-badge">Most Popular</span>
+                        <h3>Ultimate Collection</h3>
+                        <p>Complete access to all premium content</p>
+                        <div class="price-tag">$49.99<span style="font-size: 1.6rem;">/month</span></div>
+                        <ul style="text-align: left; margin: var(--space-lg) 0;">
+                            <li>Access to all collections</li>
+                            <li>Unlimited downloads</li>
+                            <li>4K Ultra HD quality</li>
+                            <li>Early access to new content</li>
+                        </ul>
+                        <a href="#" class="btn btn-premium btn-block">
+                            <i class="fas fa-shopping-cart"></i> Subscribe Now
+                        </a>
+                    </div>
+                    
+                    <!-- Collection 2 -->
+                    <div class="collection-card">
+                        <span class="collection-badge">Best Value</span>
+                        <h3>Video Collection</h3>
+                        <p>Premium video content only</p>
+                        <div class="price-tag">$29.99<span style="font-size: 1.6rem;">/month</span></div>
+                        <ul style="text-align: left; margin: var(--space-lg) 0;">
+                            <li>HD & 4K videos</li>
+                            <li>Exclusive series</li>
+                            <li>Behind the scenes</li>
+                            <li>Monthly updates</li>
+                        </ul>
+                        <a href="#" class="btn btn-premium btn-block">
+                            <i class="fas fa-shopping-cart"></i> Subscribe Now
+                        </a>
+                    </div>
+                    
+                    <!-- Collection 3 -->
+                    <div class="collection-card">
+                        <span class="collection-badge">Exclusive</span>
+                        <h3>Live Shows Collection</h3>
+                        <p>Premium live show access</p>
+                        <div class="price-tag">$39.99<span style="font-size: 1.6rem;">/month</span></div>
+                        <ul style="text-align: left; margin: var(--space-lg) 0;">
+                            <li>Private live shows</li>
+                            <li>Group sessions</li>
+                            <li>Interactive features</li>
+                            <li>Priority access</li>
+                        </ul>
+                        <a href="#" class="btn btn-premium btn-block">
+                            <i class="fas fa-shopping-cart"></i> Subscribe Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+</body>
+</html>

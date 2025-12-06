@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium FAQ - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-categories {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .faq-category-btn {
+            padding: var(--space-sm) var(--space-lg);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--gray);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .faq-category-btn.active {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .faq-section {
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .faq-item {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-sm);
+            overflow: hidden;
+            border-left: 4px solid #FFD700;
+        }
+        
+        .faq-item.premium-featured {
+            border-left-color: var(--primary);
+            background: linear-gradient(135deg, rgba(255,215,0,0.05), var(--dark-light));
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding-bottom: var(--space-lg);
+            max-height: 1000px;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-left: var(--space-sm);
+        }
+        
+        .search-faq {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .search-faq input {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--light);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: var(--space-2xl);
+            color: var(--gray);
+            display: none;
+        }
+        
+        .contact-promo {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(18, 18, 18, 0.9));
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: var(--space-2xl);
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- FAQ Header -->
+        <section class="policy-header">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Premium</span>
+                    <span class="title-line" style="color: #FFD700;">FAQ</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Frequently asked questions about our premium services
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Content -->
+        <section class="section">
+            <div class="container">
+                <!-- Search -->
+                <div class="search-faq">
+                    <input type="search" id="faq-search" placeholder="Search for answers...">
+                </div>
+
+                <!-- Categories -->
+                <div class="faq-categories">
+                    <button class="faq-category-btn active" data-category="all">All Questions</button>
+                    <button class="faq-category-btn" data-category="subscription">Subscription</button>
+                    <button class="faq-category-btn" data-category="features">Premium Features</button>
+                    <button class="faq-category-btn" data-category="billing">Billing</button>
+                    <button class="faq-category-btn" data-category="content">Premium Content</button>
+                    <button class="faq-category-btn" data-category="technical">Technical</button>
+                </div>
+
+                <!-- FAQ Sections -->
+                <div class="faq-sections">
+                    <!-- Subscription FAQs -->
+                    <div class="faq-section" data-category="subscription">
+                        <h2 class="section-title">
+                            <i class="fas fa-crown"></i>
+                            Subscription Questions
+                        </h2>
+                        
+                        <div class="faq-item premium-featured">
+                            <div class="faq-question">
+                                <h4>
+                                    <i class="fas fa-star"></i>
+                                    What are the benefits of Premium?
+                                    <span class="premium-badge">Popular</span>
+                                </h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Premium members enjoy:</p>
+                                <ul>
+                                    <li>Unlimited access to all content</li>
+                                    <li>HD and 4K streaming quality</li>
+                                    <li>No advertisements</li>
+                                    <li>Download content for offline viewing</li>
+                                    <li>Early access to new releases</li>
+                                    <li>Exclusive premium-only content</li>
+                                    <li>Priority customer support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-sync-alt"></i> Can I cancel my subscription anytime?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can cancel your subscription at any time. Your premium access will continue until the end of your current billing period. After cancellation, you will not be charged again.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-exchange-alt"></i> Can I switch between subscription plans?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can upgrade or downgrade your subscription at any time. When you upgrade, you'll get immediate access to the higher tier. When downgrading, the change takes effect at your next billing cycle.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing FAQs -->
+                    <div class="faq-section" data-category="billing">
+                        <h2 class="section-title">
+                            <i class="fas fa-credit-card"></i>
+                            Billing & Payments
+                        </h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-receipt"></i> What payment methods do you accept?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We accept:</p>
+                                <ul>
+                                    <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+                                    <li>PayPal</li>
+                                    <li>Cryptocurrency (Bitcoin, Ethereum)</li>
+                                    <li>Gift Cards (available for purchase)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-history"></i> When will I be billed?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Billing occurs on your subscription anniversary date each month or year, depending on your billing cycle. You'll receive an email notification before each charge.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-file-invoice-dollar"></i> Can I get an invoice for my subscription?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, invoices are automatically generated for each payment. You can access them in your account under "Billing History" or request them via email at billing@webpronu.com.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Features FAQs -->
+                    <div class="faq-section" data-category="features">
+                        <h2 class="section-title">
+                            <i class="fas fa-gem"></i>
+                            Premium Features
+                        </h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-download"></i> How many downloads are included?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Premium members get unlimited downloads. There are no limits on the number of videos or photos you can download for offline viewing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-hd"></i> What video quality is available?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Premium members can stream in:</p>
+                                <ul>
+                                    <li>1080p HD (Standard)</li>
+                                    <li>4K Ultra HD (Available for select content)</li>
+                                    <li>Adaptive streaming based on your connection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-mobile-alt"></i> Can I use Premium on multiple devices?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can use your Premium account on up to 3 devices simultaneously. This includes computers, smartphones, and tablets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more FAQ sections as needed -->
+
+                    <!-- No Results Message -->
+                    <div class="no-results" id="no-results">
+                        <i class="fas fa-search" style="font-size: 4rem; margin-bottom: var(--space-md);"></i>
+                        <h3>No results found</h3>
+                        <p>Try different keywords or browse the categories</p>
+                    </div>
+                </div>
+
+                <!-- Contact Promo -->
+                <div class="contact-promo">
+                    <h3><i class="fas fa-headset"></i> Still have questions?</h3>
+                    <p>Our premium support team is here to help you 24/7</p>
+                    <a href="contact.html" class="btn btn-premium">
+                        <i class="fas fa-comments"></i> Contact Premium Support
+                    </a>
+                    <p style="margin-top: var(--space-sm); font-size: 1.4rem; color: var(--gray);">
+                        Premium members get priority support with faster response times
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                    
+                    // Close other FAQs in the same section
+                    const section = parent.closest('.faq-section');
+                    if (section) {
+                        section.querySelectorAll('.faq-item').forEach(item => {
+                            if (item !== parent) {
+                                item.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Category Filter
+            const categoryBtns = document.querySelectorAll('.faq-category-btn');
+            const faqSections = document.querySelectorAll('.faq-section');
+            const noResults = document.getElementById('no-results');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide sections
+                    let visibleCount = 0;
+                    
+                    faqSections.forEach(section => {
+                        if (category === 'all' || section.dataset.category === category) {
+                            section.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show no results message if nothing is visible
+                    noResults.style.display = visibleCount > 0 ? 'none' : 'block';
+                });
+            });
+            
+            // Search Functionality
+            const searchInput = document.getElementById('faq-search');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                
+                if (searchTerm.length < 2) {
+                    // Show all if search term is too short
+                    faqSections.forEach(section => {
+                        section.style.display = 'block';
+                        section.querySelectorAll('.faq-item').forEach(item => {
+                            item.style.display = 'block';
+                        });
+                    });
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                let totalVisible = 0;
+                
+                faqSections.forEach(section => {
+                    let sectionVisible = false;
+                    
+                    section.querySelectorAll('.faq-item').forEach(item => {
+                        const question = item.querySelector('.faq-question h4').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                        
+                        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                            item.style.display = 'block';
+                            sectionVisible = true;
+                            totalVisible++;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    section.style.display = sectionVisible ? 'block' : 'none';
+                });
+                
+                noResults.style.display = totalVisible > 0 ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

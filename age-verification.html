@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--space-md);
+        }
+        
+        .verification-container {
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .verification-content {
+            background: var(--dark-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            text-align: center;
+            border: 2px solid var(--primary);
+            animation: pulse 2s infinite;
+        }
+        
+        .verification-icon {
+            font-size: 8rem;
+            color: var(--warning);
+            margin-bottom: var(--space-lg);
+            animation: bounce 1s infinite;
+        }
+        
+        .verification-title {
+            font-size: 3.6rem;
+            margin-bottom: var(--space-md);
+            color: var(--light);
+        }
+        
+        .verification-message {
+            font-size: 1.8rem;
+            color: var(--gray);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .verification-requirements {
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            text-align: left;
+        }
+        
+        .verification-requirements h3 {
+            margin-bottom: var(--space-md);
+            color: var(--light);
+        }
+        
+        .verification-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .verification-requirements li {
+            padding: var(--space-sm) 0;
+            color: var(--light);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        
+        .verification-requirements li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .verification-actions {
+            display: flex;
+            gap: var(--space-md);
+            margin: var(--space-xl) 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .verification-warning {
+            background: rgba(0,212,255,0.1);
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-top: var(--space-xl);
+            text-align: left;
+        }
+        
+        .verification-warning i {
+            color: var(--accent);
+            margin-right: var(--space-sm);
+        }
+        
+        .verification-footer {
+            margin-top: var(--space-xl);
+            color: var(--gray);
+            font-size: 1.4rem;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { border-color: var(--primary); }
+            50% { border-color: var(--primary-light); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-container">
+        <div class="verification-content">
+            <div class="verification-header">
+                <i class="fas fa-exclamation-triangle verification-icon"></i>
+                <h1 class="verification-title">Age Verification Required</h1>
+            </div>
+            
+            <p class="verification-message">
+                This website contains explicit adult content intended for individuals 18 years of age or older.
+            </p>
+            
+            <div class="verification-requirements">
+                <h3>By entering this site, you confirm that:</h3>
+                <ul>
+                    <li>You are at least 18 years old</li>
+                    <li>You are not offended by adult content</li>
+                    <li>You are entering this website of your own free will</li>
+                    <li>It is legal to view adult content in your location</li>
+                    <li>You will not share this content with minors</li>
+                    <li>You understand this content is for personal use only</li>
+                </ul>
+            </div>
+            
+            <div class="verification-actions">
+                <button id="enter-site" class="btn btn-primary btn-lg">
+                    <i class="fas fa-check-circle"></i> I AM 18 OR OLDER - ENTER
+                </button>
+                <button id="exit-site" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-times-circle"></i> I AM UNDER 18 - EXIT
+                </button>
+            </div>
+            
+            <div class="verification-warning">
+                <i class="fas fa-shield-alt"></i>
+                <small>
+                    <strong>Privacy & Security Notice:</strong> We use SSL encryption to protect your data. 
+                    All models are verified to be 18+. We comply with all applicable laws and regulations.
+                </small>
+            </div>
+            
+            <div class="verification-footer">
+                <p>
+                    <i class="fas fa-info-circle"></i>
+                    If you are under 18, please leave this site immediately. 
+                    Adult content is not suitable for minors and may be illegal to view in your location.
+                </p>
+                <p style="margin-top: var(--space-md);">
+                    <i class="fas fa-globe"></i>
+                    This site may be restricted in certain countries or jurisdictions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const enterBtn = document.getElementById('enter-site');
+            const exitBtn = document.getElementById('exit-site');
+            
+            enterBtn.addEventListener('click', function() {
+                // Set cookie or localStorage to remember verification
+                localStorage.setItem('ageVerified', 'true');
+                // Redirect to homepage
+                window.location.href = 'index.html';
+            });
+            
+            exitBtn.addEventListener('click', function() {
+                // Redirect to safe site or close window
+                window.location.href = 'https://www.google.com';
+            });
+            
+            // Check if already verified
+            if (localStorage.getItem('ageVerified') === 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

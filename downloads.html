@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Downloads - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .downloads-header {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8));
+            padding: 120px 0 60px;
+        }
+        
+        .storage-meter {
+            background: var(--dark-light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .meter-bar {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            margin: var(--space-sm) 0;
+            overflow: hidden;
+        }
+        
+        .meter-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 65%;
+        }
+        
+        .download-filters {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .download-item {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+        
+        .download-thumbnail {
+            width: 120px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+        }
+        
+        .download-info {
+            flex: 1;
+        }
+        
+        .download-actions {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: var(--space-2xl);
+            color: var(--gray);
+        }
+        
+        .empty-state i {
+            font-size: 6rem;
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+        
+        .quality-badge {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Downloads Header -->
+        <section class="downloads-header">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">My</span>
+                    <span class="title-line highlight">Downloads</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Access your downloaded content anytime, anywhere
+                </p>
+            </div>
+        </section>
+
+        <!-- Storage Meter -->
+        <section class="section">
+            <div class="container">
+                <div class="storage-meter">
+                    <div class="storage-info">
+                        <h4><i class="fas fa-hdd"></i> Storage Usage</h4>
+                        <p>15.2 GB of 25 GB used</p>
+                    </div>
+                    <div class="meter-bar">
+                        <div class="meter-fill"></div>
+                    </div>
+                    <div class="storage-actions">
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-trash"></i> Clear All
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Upgrade Storage
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="download-filters">
+                    <button class="btn btn-outline active">All Downloads</button>
+                    <button class="btn btn-outline">Videos</button>
+                    <button class="btn btn-outline">Photos</button>
+                    <button class="btn btn-outline">Recently Added</button>
+                    <button class="btn btn-outline">Favorites</button>
+                </div>
+
+                <!-- Downloads List -->
+                <div class="downloads-list">
+                    <!-- Download Item 1 -->
+                    <div class="download-item">
+                        <img src="https://images.unsplash.com/photo-1536240478700" alt="Video" class="download-thumbnail">
+                        <div class="download-info">
+                            <h4>Midnight Fantasy</h4>
+                            <p>With Aria Nova • HD 1080p • 1.2 GB</p>
+                            <small>Downloaded: 2 days ago</small>
+                        </div>
+                        <div class="download-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-play"></i> Play
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-redownload"></i>
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add more download items -->
+
+                    <!-- Empty State -->
+                    <div class="empty-state" id="empty-downloads" style="display: none;">
+                        <i class="fas fa-download"></i>
+                        <h3>No Downloads Yet</h3>
+                        <p>Start downloading your favorite content to watch offline</p>
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Browse Content
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if downloads exist
+            const downloadsList = document.querySelector('.downloads-list');
+            const emptyState = document.getElementById('empty-downloads');
+            
+            if (downloadsList.children.length <= 1) { // Only empty state exists
+                emptyState.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

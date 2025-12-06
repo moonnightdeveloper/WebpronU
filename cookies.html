@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .policy-header {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8));
+            padding: 120px 0 60px;
+        }
+        
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-section {
+            margin-bottom: var(--space-2xl);
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+        }
+        
+        .policy-section h2 {
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .policy-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .policy-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .policy-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-lg) 0;
+        }
+        
+        .cookie-table th,
+        .cookie-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cookie-table th {
+            background: rgba(255,51,102,0.1);
+            color: var(--primary);
+        }
+        
+        .cookie-controls {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .cookie-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--gray);
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--light);
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Policy Header -->
+        <section class="policy-header">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Cookie</span>
+                    <span class="title-line highlight">Policy</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Last updated: January 1, 2024
+                </p>
+            </div>
+        </section>
+
+        <!-- Policy Content -->
+        <section class="section">
+            <div class="container">
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h2><i class="fas fa-cookie-bite"></i> What Are Cookies</h2>
+                        <p>Cookies are small text files that are placed on your computer or mobile device when you visit our website. They help us provide you with a better experience by:</p>
+                        <ul class="policy-list">
+                            <li>Remembering your preferences</li>
+                            <li>Understanding how you use our site</li>
+                            <li>Providing personalized content</li>
+                            <li>Improving site functionality</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-list"></i> Types of Cookies We Use</h2>
+                        
+                        <table class="cookie-table">
+                            <thead>
+                                <tr>
+                                    <th>Cookie Type</th>
+                                    <th>Purpose</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Essential Cookies</strong></td>
+                                    <td>Required for site functionality and security</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Preference Cookies</strong></td>
+                                    <td>Remember your settings and preferences</td>
+                                    <td>1 year</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Analytics Cookies</strong></td>
+                                    <td>Help us understand site usage</td>
+                                    <td>2 years</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Marketing Cookies</strong></td>
+                                    <td>Deliver relevant advertisements</td>
+                                    <td>90 days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="cookie-controls">
+                        <h2><i class="fas fa-sliders-h"></i> Cookie Preferences</h2>
+                        <p>You can control which cookies we use. Essential cookies cannot be disabled as they are necessary for site functionality.</p>
+                        
+                        <div class="cookie-toggle">
+                            <div>
+                                <h4>Essential Cookies</h4>
+                                <small>Required for site operation</small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="cookie-toggle">
+                            <div>
+                                <h4>Preference Cookies</h4>
+                                <small>Remember your settings</small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="pref-cookies" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="cookie-toggle">
+                            <div>
+                                <h4>Analytics Cookies</h4>
+                                <small>Help improve our site</small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="analytics-cookies" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="cookie-toggle">
+                            <div>
+                                <h4>Marketing Cookies</h4>
+                                <small>Show relevant ads</small>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="marketing-cookies">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <button id="save-cookie-prefs" class="btn btn-primary" style="margin-top: var(--space-lg);">
+                            <i class="fas fa-save"></i> Save Preferences
+                        </button>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-cog"></i> How to Control Cookies</h2>
+                        <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed.</p>
+                        <p>To learn more about cookies, including how to see what cookies have been set and how to manage and delete them, visit <a href="https://www.allaboutcookies.org" target="_blank">www.allaboutcookies.org</a>.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-question-circle"></i> Contact Us</h2>
+                        <p>If you have any questions about our Cookie Policy, please contact us:</p>
+                        <ul class="policy-list">
+                            <li>Email: privacy@webpronu.com</li>
+                            <li>Address: 123 Privacy Street, Digital City</li>
+                            <li>For data protection inquiries: dpo@webpronu.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const saveBtn = document.getElementById('save-cookie-prefs');
+            
+            saveBtn.addEventListener('click', function() {
+                const prefs = {
+                    preferences: document.getElementById('pref-cookies').checked,
+                    analytics: document.getElementById('analytics-cookies').checked,
+                    marketing: document.getElementById('marketing-cookies').checked
+                };
+                
+                localStorage.setItem('cookiePrefs', JSON.stringify(prefs));
+                
+                alert('Cookie preferences saved successfully!');
+            });
+            
+            // Load saved preferences
+            const savedPrefs = localStorage.getItem('cookiePrefs');
+            if (savedPrefs) {
+                const prefs = JSON.parse(savedPrefs);
+                document.getElementById('pref-cookies').checked = prefs.preferences;
+                document.getElementById('analytics-cookies').checked = prefs.analytics;
+                document.getElementById('marketing-cookies').checked = prefs.marketing;
+            }
+        });
+    </script>
+</body>
+</html>

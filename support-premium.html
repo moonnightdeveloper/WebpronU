@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Support - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .support-hero {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(18, 18, 18, 0.9));
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .priority-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark);
+            padding: 4px 16px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: var(--space-md);
+            animation: pulse 2s infinite;
+        }
+        
+        .support-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .support-feature-card {
+            background: linear-gradient(135deg, rgba(255,215,0,0.05), var(--dark-light));
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 2px solid rgba(255,215,0,0.2);
+        }
+        
+        .support-feature-card i {
+            font-size: 4rem;
+            color: #FFD700;
+            margin-bottom: var(--space-md);
+        }
+        
+        .live-chat-widget {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-2xl) 0;
+            border: 2px solid var(--primary);
+        }
+        
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .agent-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 1.4rem;
+        }
+        
+        .status-online {
+            color: var(--success);
+        }
+        
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .message {
+            margin-bottom: var(--space-md);
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            max-width: 80%;
+        }
+        
+        .message-agent {
+            background: rgba(255,51,102,0.1);
+            margin-right: auto;
+        }
+        
+        .message-user {
+            background: rgba(0,212,255,0.1);
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: var(--space-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            color: var(--light);
+        }
+        
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin: var(--space-xl) 0;
+        }
+        
+        .quick-link {
+            background: var(--dark-light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+        
+        .quick-link:hover {
+            background: rgba(255,51,102,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .escalation-form {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-2xl);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Support Hero -->
+        <section class="support-hero">
+            <div class="container">
+                <span class="priority-badge">
+                    <i class="fas fa-crown"></i> PREMIUM SUPPORT
+                </span>
+                <h1 class="hero-title">
+                    <span class="title-line">Priority</span>
+                    <span class="title-line" style="color: #FFD700;">Support</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Exclusive support for our premium members
+                </p>
+            </div>
+        </section>
+
+        <!-- Support Features -->
+        <section class="section">
+            <div class="container">
+                <div class="support-features">
+                    <div class="support-feature-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Response</h3>
+                        <p>Average response time: under 15 minutes</p>
+                    </div>
+                    
+                    <div class="support-feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Availability</h3>
+                        <p>Support available around the clock</p>
+                    </div>
+                    
+                    <div class="support-feature-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Dedicated Agents</h3>
+                        <p>Experienced premium support specialists</p>
+                    </div>
+                </div>
+
+                <!-- Live Chat -->
+                <div class="live-chat-widget">
+                    <div class="chat-header">
+                        <i class="fas fa-comments" style="color: var(--primary); font-size: 2.4rem;"></i>
+                        <div>
+                            <h3>Live Chat Support</h3>
+                            <div class="agent-status">
+                                <i class="fas fa-circle status-online"></i>
+                                <span>Agent available • Connect instantly</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message message-agent">
+                            <strong>Premium Support:</strong> Hello! How can I assist you today?
+                        </div>
+                        <div class="message message-user">
+                            <strong>You:</strong> I need help with my subscription
+                        </div>
+                        <div class="message message-agent">
+                            <strong>Premium Support:</strong> I'd be happy to help! What seems to be the issue?
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <input type="text" id="chat-input" placeholder="Type your message here...">
+                        <button id="send-chat" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    
+                    <div style="margin-top: var(--space-md); font-size: 1.2rem; color: var(--gray);">
+                        <i class="fas fa-info-circle"></i> Average wait time: <strong>2 minutes</strong>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="quick-links">
+                    <a href="faq-premium.html" class="quick-link">
+                        <i class="fas fa-question-circle" style="font-size: 2.4rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                        <h4>Premium FAQ</h4>
+                        <p>Answers to common questions</p>
+                    </a>
+                    
+                    <a href="contact.html" class="quick-link">
+                        <i class="fas fa-envelope" style="font-size: 2.4rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                        <h4>Email Support</h4>
+                        <p>premium@webpronu.com</p>
+                    </a>
+                    
+                    <a href="billing-support.html" class="quick-link">
+                        <i class="fas fa-credit-card" style="font-size: 2.4rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                        <h4>Billing Help</h4>
+                        <p>Payment & subscription issues</p>
+                    </a>
+                    
+                    <a href="technical-support.html" class="quick-link">
+                        <i class="fas fa-cog" style="font-size: 2.4rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                        <h4>Technical Support</h4>
+                        <p>Playback & app issues</p>
+                    </a>
+                </div>
+
+                <!-- Escalation Form -->
+                <div class="escalation-form">
+                    <h2 class="section-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Need Immediate Assistance?
+                    </h2>
+                    <p>For urgent matters requiring immediate attention from a senior support agent:</p>
+                    
+                    <form id="escalation-form">
+                        <div class="form-group">
+                            <label for="urgent-subject">Subject *</label>
+                            <input type="text" id="urgent-subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgent-message">Describe the Issue *</label>
+                            <textarea id="urgent-message" required rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="priority-level">Priority Level</label>
+                            <select id="priority-level">
+                                <option value="high">High - Need resolution today</option>
+                                <option value="urgent" selected>Urgent - Immediate attention required</option>
+                                <option value="critical">Critical - Service interruption</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-premium">
+                            <i class="fas fa-paper-plane"></i> Submit Urgent Request
+                        </button>
+                    </form>
+                    
+                    <div style="margin-top: var(--space-md); font-size: 1.2rem; color: var(--warning);">
+                        <i class="fas fa-clock"></i> Urgent requests are typically responded to within 30 minutes
+                    </div>
+                </div>
+
+                <!-- Support Guarantee -->
+                <div class="policy-highlight" style="margin-top: var(--space-2xl);">
+                    <h3><i class="fas fa-shield-alt"></i> Premium Support Guarantee</h3>
+                    <p>As a premium member, you're guaranteed:</p>
+                    <ul>
+                        <li>Response within 15 minutes for live chat</li>
+                        <li>Response within 1 hour for email</li>
+                        <li>Dedicated support agent</li>
+                        <li>Escalation to senior staff if needed</li>
+                        <li>24/7 availability including holidays</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chat Functionality
+            const chatInput = document.getElementById('chat-input');
+            const sendBtn = document.getElementById('send-chat');
+            const chatMessages = document.getElementById('chat-messages');
+            
+            function addMessage(text, isUser = true) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'message-user' : 'message-agent'}`;
+                messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'Premium Support'}:</strong> ${text}`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            sendBtn.addEventListener('click', function() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addMessage(message, true);
+                    chatInput.value = '';
+                    
+                    // Simulate agent response
+                    setTimeout(() => {
+                        const responses = [
+                            "I understand. Let me check that for you.",
+                            "I can help with that. Could you provide more details?",
+                            "Thanks for explaining. I'll look into this right away.",
+                            "I need to escalate this to our technical team. One moment please."
+                        ];
+                        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                        addMessage(randomResponse, false);
+                    }, 1000);
+                }
+            });
+            
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendBtn.click();
+                }
+            });
+            
+            // Escalation Form
+            const escalationForm = document.getElementById('escalation-form');
+            escalationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Urgent request submitted! A senior agent will contact you within 30 minutes.');
+                escalationForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

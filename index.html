@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebpronU - Premium Adult Entertainment</title>
+
+    <!-- Meta tags -->
+    <meta name="description"
+        content="Premium adult entertainment website featuring exclusive HD content, professional models, and secure access.">
+    <meta name="keywords" content="adult entertainment, premium content, HD videos, exclusive models">
+    <meta name="rating" content="adult">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="age-verification" content="18">
+    <meta name="author" content="WebpronU">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="WebpronU - Premium Adult Content">
+    <meta property="og:description" content="Exclusive adult entertainment with premium models">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="WebpronU">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Preload critical assets -->
+    <!-- <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.js" as="script"> -->
+</head>
+
+<body>
+
+    <!-- Age Verification Modal -->
+    <!-- <div id="age-verification" class="age-verification-modal">
+        <div class="verification-content">
+            <div class="verification-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Age Verification Required</h2>
+            </div>
+            <div class="verification-body">
+                <p>This website contains explicit adult content intended for individuals 18 years of age or older.</p>
+                <p>By entering this site, you confirm that:</p>
+                <ul>
+                    <li>You are at least 18 years old</li>
+                    <li>You are not offended by adult content</li>
+                    <li>It is legal to view adult content in your location</li>
+                </ul>
+                <div class="verification-actions">
+                    <button id="enter-site" class="btn btn-primary">
+                        <i class="fas fa-check-circle"></i> I AM 18 OR OLDER
+                    </button>
+                    <button id="exit-site" class="btn btn-secondary">
+                        <i class="fas fa-times-circle"></i> EXIT SITE
+                    </button>
+                </div>
+                <div class="verification-warning">
+                    <i class="fas fa-shield-alt"></i>
+                    <small>Your privacy and security are important to us. We use SSL encryption and never share your
+                        data.</small>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Loading Screen -->
+    <!-- <div class="loader-container">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="image/logo.png" alt="WebpronU" class="pulse">
+            </div>
+            <div class="loader-text">
+                <span>Loading Premium Content</span>
+                <div class="loader-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Header Section -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="site-announcement">
+                        <i class="fas fa-fire"></i>
+                        <span>Limited Time Offer: Get 50% Off Premium Subscription!</span>
+                    </div>
+                    <div class="header-top-links">
+                        <a href="support.html"><i class="fas fa-headset"></i> Support</a>
+                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="index.html" class="logo">
+                            <img src="image/logo.png" alt="WebpronU" class="logo-img">
+                            <span class="logo-text">Webpron<span class="logo-highlight">U</span></span>
+                        </a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <form action="search.html" class="search-form" method="get" id="search-form">
+                            <div class="search-input-group">
+                                <input type="search" name="q" placeholder="Search models, categories, or tags..."
+                                    id="search-box" autocomplete="off" aria-label="Search content">
+                                <button type="submit" class="search-btn" aria-label="Search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <div class="search-suggestions" id="search-suggestions"></div>
+                            </div>
+                            <div class="search-filters">
+                                <select name="category" class="filter-select">
+                                    <option value="">All Categories</option>
+                                    <option value="videos">Videos</option>
+                                    <option value="photos">Photos</option>
+                                    <option value="live">Live Shows</option>
+                                </select>
+                                <select name="duration" class="filter-select">
+                                    <option value="">Any Duration</option>
+                                    <option value="short">Under 10 min</option>
+                                    <option value="medium">10-30 min</option>
+                                    <option value="long">Over 30 min</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- User Actions -->
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <button id="mobile-search-btn" class="action-btn mobile-only" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+
+                            <div class="notification-dropdown">
+                                <button class="action-btn notification-btn" aria-label="Notifications">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="notification-count">3</span>
+                                </button>
+                                <div class="notification-dropdown-content">
+                                    <h4>Notifications</h4>
+                                    <div class="notification-item">
+                                        <i class="fas fa-star"></i>
+                                        <div class="notification-text">
+                                            <strong>New content added</strong>
+                                            <small>5 minutes ago</small>
+                                        </div>
+                                    </div>
+                                    <!-- More notifications -->
+                                </div>
+                            </div>
+
+                            <button id="login-btn" class="action-btn login-btn" aria-label="Login">
+                                <i class="fas fa-user"></i>
+                                <span class="btn-text">Login</span>
+                            </button>
+
+                            <button id="menu-toggle" class="action-btn menu-toggle" aria-label="Menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-navigation">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#featured" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Featured</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#categories" class="nav-link">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="category-hd.html">HD Videos</a>
+                            <a href="category-4k.html">4K Ultra HD</a>
+                            <a href="category-live.html">Live Shows</a>
+                            <a href="category-photos.html">Photo Galleries</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#new" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>New Arrivals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./trending.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Trending</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/premium.html" class="nav-link premium">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-navigation">
+        <div class="mobile-nav-content">
+            <a href="#home" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#featured" class="mobile-nav-item">
+                <i class="fas fa-star"></i>
+                <span>Featured</span>
+            </a>
+            <a href="#categories" class="mobile-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="#new" class="mobile-nav-item">
+                <i class="fas fa-newspaper"></i>
+                <span>New</span>
+            </a>
+            <a href="#profile" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Premium Adult</span>
+                            <span class="title-line highlight">Entertainment</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Exclusive content • Professional models • HD Quality
+                        </p>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-play-circle"></i>
+                                <span>10,000+ Videos</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-images"></i>
+                                <span>50,000+ Photos</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-star"></i>
+                                <span>500+ Models</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-download"></i>
+                                <span>Offline Viewing</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="premium.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-crown"></i>
+                                Start Free Trial
+                            </a>
+                            <a href="#featured" class="btn btn-outline btn-lg">
+                                <i class="fas fa-play"></i>
+                                Browse Content
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-slider">
+                        <div class="swiper heroSwiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slides will be populated by JS -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Models Section -->
+        <section class="section featured-section" id="featured">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-fire"></i>
+                        Featured Models
+                    </h2>
+                    <p class="section-subtitle">Most popular models this week</p>
+                    <a href="all-models.html" class="view-all">
+                        View All <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="models-grid">
+                    <!-- Model cards will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-th-large"></i>
+                        Browse Categories
+                    </h2>
+                    <p class="section-subtitle">Find content by category</p>
+                </div>
+
+                <div class="categories-grid">
+                    <a href="category-hd.html" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-hd"></i>
+                        </div>
+                        <h3>HD Videos</h3>
+                        <p>Full HD quality content</p>
+                        <span class="category-count">1,200+</span>
+                    </a>
+                    <!-- More categories -->
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="section new-arrivals" id="new">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-newspaper"></i>
+                        New Arrivals
+                    </h2>
+                    <div class="section-tabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="videos">Videos</button>
+                        <button class="tab-btn" data-filter="photos">Photos</button>
+                        <button class="tab-btn" data-filter="live">Live</button>
+                    </div>
+                </div>
+
+                <div class="arrivals-slider-container">
+                    <div class="swiper arrivalsSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides will be populated by JS -->
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Offer Section -->
+        <section class="section premium-offer" id="premium">
+            <div class="container">
+                <div class="offer-content">
+                    <div class="offer-text">
+                        <span class="offer-badge">Limited Time</span>
+                        <h2>Get Premium Access</h2>
+                        <h1>50% OFF</h1>
+                        <p>Unlock all content for 30 days. No restrictions, no ads, full HD quality.</p>
+
+                        <div class="offer-features">
+                            <p><i class="fas fa-check"></i> Unlimited Access</p>
+                            <p><i class="fas fa-check"></i> HD & 4K Quality</p>
+                            <p><i class="fas fa-check"></i> No Ads</p>
+                            <p><i class="fas fa-check"></i> Download Option</p>
+                        </div>
+
+                        <div class="countdown-timer">
+                            <h4>Offer Ends In:</h4>
+                            <div class="timer">
+                                <div class="time-unit">
+                                    <span id="offer-hours">48</span>
+                                    <small>Hours</small>
+                                </div>
+                                <div class="time-unit">
+                                    <span id="offer-minutes">00</span>
+                                    <small>Minutes</small>
+                                </div>
+                                <div class="time-unit">
+                                    <span id="offer-seconds">00</span>
+                                    <small>Seconds</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="premium-offer.html" class="btn btn-premium btn-lg">
+                            <i class="fas fa-bolt"></i>
+                            Get Premium Now
+                        </a>
+                    </div>
+
+                    <div class="offer-image">
+                        <img src="image/premium-offer.png" alt="Premium Offer" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="section statistics-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-video"></i>
+                        <h3>10,000+</h3>
+                        <p>HD Videos</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>500+</h3>
+                        <p>Professional Models</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>50+</h3>
+                        <p>Countries Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-smile"></i>
+                        <h3>99.8%</h3>
+                        <p>User Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="image/logo.png" alt="WebpronU">
+                            <span>WebpronU</span>
+                        </div>
+                        <p class="footer-description">
+                            Premium adult entertainment platform featuring exclusive content from professional models.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="models.html">Models</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="new.html">New Arrivals</a></li>
+                            <li><a href="trending.html">Trending</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="report.html">Report Content</a></li>
+                            <li><a href="age-verification.html">Age Verification</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe for updates and offers</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 WebpronU. All rights reserved. Adults only (18+)</p>
+                    <div class="footer-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>This site contains explicit adult content. All models are 18+.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h2>Welcome Back</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                        <button type="button" class="show-password" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="forgot-password.html">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    <div class="social-auth">
+                        <button type="button" class="btn btn-google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                    <p class="auth-switch">
+                        Don't have an account? <a href="register.html">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/components.js"></script>
+
+    <!-- Initialize -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the application
+            App.init();
+        });
+    </script>
+</body>
+
+</html>

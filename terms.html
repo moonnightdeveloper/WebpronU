@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .refund-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .process-step {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: var(--primary);
+            color: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        
+        .refund-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-xl) 0;
+        }
+        
+        .refund-table th,
+        .refund-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .refund-table th {
+            background: rgba(255,51,102,0.1);
+            color: var(--primary);
+        }
+        
+        .refund-status {
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .status-eligible {
+            background: rgba(76,175,80,0.2);
+            color: #4CAF50;
+        }
+        
+        .status-ineligible {
+            background: rgba(244,67,54,0.2);
+            color: #F44336;
+        }
+        
+        .refund-form {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--light);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            color: var(--light);
+        }
+        
+        .faq-section {
+            margin-top: var(--space-2xl);
+        }
+        
+        .faq-item {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-sm);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding-bottom: var(--space-lg);
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Refund Header -->
+        <section class="policy-header">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Refund</span>
+                    <span class="title-line highlight">Policy</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Our policy on refunds and cancellations
+                </p>
+            </div>
+        </section>
+
+        <!-- Refund Content -->
+        <section class="section">
+            <div class="container">
+                <div class="policy-content">
+                    <div class="policy-highlight">
+                        <p><strong>Important:</strong> Due to the digital nature of our content, we generally do not offer refunds. 
+                        However, we make exceptions in certain circumstances as outlined below.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-check-circle"></i> Eligible Refund Scenarios</h2>
+                        <p>We may issue refunds in the following cases:</p>
+                        
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Timeframe</th>
+                                    <th>Refund Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Duplicate charge</td>
+                                    <td>Within 7 days</td>
+                                    <td>Full refund</td>
+                                    <td><span class="refund-status status-eligible">Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Technical issues preventing access</td>
+                                    <td>Within 3 days</td>
+                                    <td>Full refund</td>
+                                    <td><span class="refund-status status-eligible">Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Unauthorized transaction</td>
+                                    <td>Within 14 days</td>
+                                    <td>Full refund</td>
+                                    <td><span class="refund-status status-eligible">Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Content not as described</td>
+                                    <td>Within 24 hours</td>
+                                    <td>Full refund</td>
+                                    <td><span class="refund-status status-eligible">Eligible</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-times-circle"></i> Non-Eligible Scenarios</h2>
+                        <p>Refunds will not be issued in the following cases:</p>
+                        
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Change of mind</td>
+                                    <td>Digital content cannot be returned</td>
+                                    <td><span class="refund-status status-ineligible">Not Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Account sharing discovered</td>
+                                    <td>Violation of terms</td>
+                                    <td><span class="refund-status status-ineligible">Not Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Partial usage of subscription</td>
+                                    <td>Service was available</td>
+                                    <td><span class="refund-status status-ineligible">Not Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Forgetting to cancel subscription</td>
+                                    <td>User responsibility</td>
+                                    <td><span class="refund-status status-ineligible">Not Eligible</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Content no longer wanted</td>
+                                    <td>Digital goods exception</td>
+                                    <td><span class="refund-status status-ineligible">Not Eligible</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-sync-alt"></i> Refund Process</h2>
+                        <p>If you believe you're eligible for a refund, follow this process:</p>
+                        
+                        <div class="refund-process">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <i class="fas fa-envelope" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                                <h4>Contact Support</h4>
+                                <p>Email refunds@webpronu.com with your request</p>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <i class="fas fa-file-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                                <h4>Provide Details</h4>
+                                <p>Include transaction ID and reason for refund</p>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <i class="fas fa-search" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                                <h4>Review Period</h4>
+                                <p>We review your request within 7 business days</p>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: var(--space-sm);"></i>
+                                <h4>Decision & Processing</h4>
+                                <p>If approved, refund processed in 5-10 business days</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Refund Request Form -->
+                    <div class="refund-form">
+                        <h2><i class="fas fa-paper-plane"></i> Submit Refund Request</h2>
+                        <form id="refund-request-form">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="transaction-id">Transaction ID *</label>
+                                <input type="text" id="transaction-id" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="refund-reason">Reason for Refund *</label>
+                                <select id="refund-reason" required>
+                                    <option value="">Select a reason</option>
+                                    <option value="duplicate">Duplicate charge</option>
+                                    <option value="technical">Technical issues</option>
+                                    <option value="unauthorized">Unauthorized transaction</option>
+                                    <option value="not-as-described">Content not as described</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="description">Additional Details</label>
+                                <textarea id="description" rows="4" placeholder="Please provide any additional details..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Submit Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How long does the refund process take?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>If approved, refunds typically appear on your payment method within 5-10 business days. 
+                                The exact timing depends on your payment provider.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can I get a partial refund?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We do not offer partial refunds for subscription periods. 
+                                If you're unsatisfied with our service, please contact support for assistance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What happens if my refund is denied?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>If your refund request is denied, we will provide a detailed explanation. 
+                                You may appeal the decision by providing additional information to support your case.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Do you offer refunds for annual subscriptions?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Annual subscriptions follow the same refund policy. Refunds are only available 
+                                for qualifying circumstances within the specified timeframes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="policy-section">
+                        <h2><i class="fas fa-headset"></i> Contact Support</h2>
+                        <p>For refund inquiries or assistance:</p>
+                        <ul class="policy-list">
+                            <li>Email: refunds@webpronu.com</li>
+                            <li>Response Time: Within 48 hours</li>
+                            <li>Hours: Monday-Friday, 9 AM - 6 PM EST</li>
+                            <li>Please include your transaction ID in all communications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+            
+            // Refund Form Submission
+            const refundForm = document.getElementById('refund-request-form');
+            refundForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, this would send data to your server
+                alert('Refund request submitted successfully! We will review your request within 7 business days.');
+                refundForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

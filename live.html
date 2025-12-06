@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Shows - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .live-hero {
+            background: linear-gradient(rgba(255, 51, 102, 0.1), rgba(18, 18, 18, 0.9));
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .live-now-banner {
+            background: var(--primary);
+            color: var(--light);
+            padding: var(--space-md);
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            animation: pulse 2s infinite;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .live-card {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .live-thumbnail {
+            position: relative;
+            height: 200px;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--danger);
+            color: var(--light);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            animation: pulse 1s infinite;
+        }
+
+        .live-viewers {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--light);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+        }
+
+        .live-info {
+            padding: var(--space-lg);
+        }
+
+        .live-model {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .model-avatar-small {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .live-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin: var(--space-md) 0;
+        }
+
+        .live-schedule {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule-time {
+            background: var(--primary);
+            color: var(--light);
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .upcoming-shows {
+            margin-top: var(--space-2xl);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Same as index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Live Hero -->
+        <section class="live-hero">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Live</span>
+                    <span class="title-line highlight">Shows</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Real-time interactive shows with your favorite models
+                </p>
+            </div>
+        </section>
+
+        <!-- Live Now Banner -->
+        <div class="live-now-banner">
+            <div class="container">
+                <i class="fas fa-broadcast-tower"></i>
+                <strong>15 Shows Live Now!</strong> Join the fun and interact with models in real-time.
+            </div>
+        </div>
+
+        <!-- Live Shows Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="live-grid">
+                    <!-- Live Show 1 -->
+                    <div class="live-card">
+                        <div class="live-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Live Show">
+                            <span class="live-badge">LIVE</span>
+                            <span class="live-viewers">
+                                <i class="fas fa-users"></i> 1,245
+                            </span>
+                        </div>
+                        <div class="live-info">
+                            <div class="live-model">
+                                <img src="https://images.unsplash.com/photo-1611224923853" alt="Model"
+                                    class="model-avatar-small">
+                                <div>
+                                    <h4>Aria Nova</h4>
+                                    <p>Cosplay Fantasy Show</p>
+                                </div>
+                            </div>
+                            <p>Join Aria for an exclusive cosplay fantasy session!</p>
+                            <div class="live-tags">
+                                <span class="model-tag">Cosplay</span>
+                                <span class="model-tag">Interactive</span>
+                                <span class="model-tag">HD</span>
+                            </div>
+                            <a href="live-show.html" class="btn btn-primary btn-block">
+                                <i class="fas fa-play"></i> Join Show
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add more live shows -->
+                </div>
+
+                <!-- Schedule -->
+                <div class="live-schedule">
+                    <h2 class="section-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Today's Schedule
+                    </h2>
+
+                    <div class="schedule-item">
+                        <div>
+                            <h4>Pool Party with Sophia</h4>
+                            <p>Summer special live show</p>
+                        </div>
+                        <span class="schedule-time">20:00 EST</span>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div>
+                            <h4>Midnight Fantasy</h4>
+                            <p>Exclusive cosplay show</p>
+                        </div>
+                        <span class="schedule-time">22:00 EST</span>
+                    </div>
+
+                    <!-- Add more schedule items -->
+                </div>
+
+                <!-- Upcoming Shows -->
+                <div class="upcoming-shows">
+                    <h2 class="section-title">
+                        <i class="fas fa-clock"></i>
+                        Upcoming Shows
+                    </h2>
+
+                    <div class="models-grid">
+                        <!-- Upcoming show cards -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+</body>
+
+</html>

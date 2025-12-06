@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .models-page-header {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8));
+            padding: 120px 0 60px;
+        }
+        
+        .model-filters {
+            background: var(--dark-light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .filter-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .filter-group h4 {
+            margin-bottom: var(--space-sm);
+            color: var(--light);
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+        
+        .filter-tag {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--gray);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+        
+        .filter-tag.active {
+            background: var(--gradient-primary);
+            color: var(--light);
+        }
+        
+        .model-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .stat-card {
+            background: var(--dark-light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+        
+        .model-alphabet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xl);
+            justify-content: center;
+        }
+        
+        .letter-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-light);
+            border-radius: var(--radius-md);
+            color: var(--gray);
+            transition: all var(--transition-base);
+        }
+        
+        .letter-link.active,
+        .letter-link:hover {
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .model-profile-card {
+            background: var(--dark-light);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+        
+        .model-profile-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .model-avatar {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .model-status {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .status-online {
+            background: var(--success);
+            color: var(--light);
+        }
+        
+        .status-offline {
+            background: var(--gray);
+            color: var(--light);
+        }
+        
+        .model-info {
+            padding: var(--space-lg);
+        }
+        
+        .model-name {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .model-details {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+            font-size: 1.4rem;
+        }
+        
+        .model-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        
+        .model-tag {
+            background: rgba(255,51,102,0.1);
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xs);
+            margin-top: var(--space-xl);
+        }
+        
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-light);
+            border-radius: var(--radius-md);
+            color: var(--gray);
+            transition: all var(--transition-base);
+        }
+        
+        .page-link.active,
+        .page-link:hover {
+            background: var(--primary);
+            color: var(--light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Same structure as index.html) -->
+    <header class="header" id="header">
+        <!-- Copy header from index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Models Header -->
+        <section class="models-page-header">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span class="title-line">Our</span>
+                    <span class="title-line highlight">Models</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Browse through our collection of professional models
+                </p>
+            </div>
+        </section>
+
+        <!-- Filters & Stats -->
+        <section class="section">
+            <div class="container">
+                <div class="model-filters">
+                    <div class="filter-group">
+                        <h4><i class="fas fa-filter"></i> Filter by Category</h4>
+                        <div class="filter-tags">
+                            <span class="filter-tag active" data-category="all">All Models</span>
+                            <span class="filter-tag" data-category="hd">HD Videos</span>
+                            <span class="filter-tag" data-category="4k">4K Content</span>
+                            <span class="filter-tag" data-category="live">Live Shows</span>
+                            <span class="filter-tag" data-category="cosplay">Cosplay</span>
+                            <span class="filter-tag" data-category="amateur">Amateur</span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4><i class="fas fa-sort"></i> Sort by</h4>
+                        <div class="filter-tags">
+                            <span class="filter-tag active" data-sort="popular">Most Popular</span>
+                            <span class="filter-tag" data-sort="newest">Newest</span>
+                            <span class="filter-tag" data-sort="rating">Highest Rated</span>
+                            <span class="filter-tag" data-sort="alphabetical">A-Z</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>500+</h3>
+                        <p>Active Models</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>50+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3>4.8</h3>
+                        <p>Average Rating</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-fire"></i>
+                        <h3>150+</h3>
+                        <p>Online Now</p>
+                    </div>
+                </div>
+
+                <!-- Alphabet Navigation -->
+                <div class="model-alphabet">
+                    <a href="#A" class="letter-link">A</a>
+                    <a href="#B" class="letter-link">B</a>
+                    <!-- Add all letters -->
+                </div>
+
+                <!-- Models Grid -->
+                <div class="models-grid">
+                    <!-- Model 1 -->
+                    <div class="model-profile-card">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71" alt="Aria Nova" class="model-avatar">
+                        <span class="model-status status-online">Online</span>
+                        <div class="model-info">
+                            <h3 class="model-name">Aria Nova</h3>
+                            <div class="model-details">
+                                <span><i class="fas fa-video"></i> 120 Videos</span>
+                                <span><i class="fas fa-image"></i> 450 Photos</span>
+                            </div>
+                            <div class="model-tags">
+                                <span class="model-tag">HD</span>
+                                <span class="model-tag">Cosplay</span>
+                                <span class="model-tag">Premium</span>
+                            </div>
+                            <div class="model-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(4,520)</span>
+                            </div>
+                            <a href="model-aria.html" class="btn btn-primary btn-block">
+                                View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add more model cards -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterTags = document.querySelectorAll('.filter-tag');
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

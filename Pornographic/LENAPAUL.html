@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lena Paul Profile</title>
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Import Font Dancing Script and Poppins */
+        @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        :root {
+            --green: #27ae60;
+            --dark-color: #219150;
+            --black: #444;
+            --light-color: #666;
+            --border: .1rem solid rgba(0,0,0,.1);
+            --border-hover: .1rem solid var(--black);
+            --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            --pink: #ff4081;
+            --purple: #9c27b0;
+            --deep-purple: #673ab7;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            transition: all .2s linear;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+       
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+        }
+
+        .profile-header h1 {
+            font-size: 4.5rem;
+            color: var(--pink);
+            text-shadow: 0 0 20px rgba(255, 64, 129, 0.5);
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 64, 129, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 64, 129, 0.8); }
+        }
+
+        .profile-header .tagline {
+            font-size: 1.8rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* Profile Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 64, 129, 0.2);
+        }
+
+        .profile-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 64, 129, 0.2);
+            transform: scale(1.05);
+        }
+
+        .stat-item .number {
+            font-size: 2.5rem;
+            color: var(--pink);
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-item .label {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        /* Identity Card */
+        .identity-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .identity-card:hover {
+            box-shadow: 0 15px 40px rgba(156, 39, 176, 0.2);
+        }
+
+        .identity-card h2 {
+            font-size: 3rem;
+            color: var(--purple);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(156, 39, 176, 0.3);
+            position: relative;
+        }
+
+        .identity-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--purple), transparent);
+            animation: slideIn 1s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        .info-table {
+            width: 100%;
+        }
+
+        .info-table tr {
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideInRow 0.5s ease forwards;
+        }
+
+        @keyframes slideInRow {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-table tr:nth-child(1) { animation-delay: 0.1s; }
+        .info-table tr:nth-child(2) { animation-delay: 0.2s; }
+        .info-table tr:nth-child(3) { animation-delay: 0.3s; }
+        .info-table tr:nth-child(4) { animation-delay: 0.4s; }
+        .info-table tr:nth-child(5) { animation-delay: 0.5s; }
+        .info-table tr:nth-child(6) { animation-delay: 0.6s; }
+        .info-table tr:nth-child(7) { animation-delay: 0.7s; }
+
+        .info-table td {
+            padding: 1.5rem 0;
+            font-size: 1.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .info-table tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+            padding-left: 1rem;
+        }
+
+        .info-table td:first-child {
+            color: #ccc;
+            font-weight: 500;
+            width: 35%;
+        }
+
+        .info-table td:nth-child(2) {
+            width: 10%;
+            color: var(--pink);
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .info-table td:last-child {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        /* Media Section */
+        .media-section {
+            margin-top: 4rem;
+        }
+
+        .media-section h3 {
+            font-size: 2.5rem;
+            color: var(--deep-purple);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .media-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .media-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .media-item:hover .media-overlay {
+            transform: translateY(0);
+        }
+
+        .media-title {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-rating {
+            color: gold;
+            font-size: 1.4rem;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-back {
+            background: linear-gradient(135deg, var(--purple), var(--deep-purple));
+            color: white;
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.4);
+        }
+
+        .btn-back:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(156, 39, 176, 0.6);
+            background: linear-gradient(135deg, var(--deep-purple), var(--purple));
+        }
+
+        .btn-book {
+            background: linear-gradient(135deg, var(--pink), #ff1744);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn-book:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6);
+            background: linear-gradient(135deg, #ff1744, var(--pink));
+        }
+
+        /* Footer */
+        .profile-footer {
+            text-align: center;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 1.4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-header h1 {
+                font-size: 3rem;
+            }
+            
+            .profile-grid {
+                gap: 2rem;
+            }
+            
+            .profile-image {
+                height: 300px;
+            }
+            
+            .info-table td {
+                font-size: 1.4rem;
+                padding: 1rem 0;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+       <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <h1>LENA PAUL</h1>
+            <p class="tagline">Award-Winning Performer & Adult Film Star</p>
+        </div>
+
+        <!-- Profile Grid -->
+        <div class="profile-grid">
+            <!-- Left Column - Profile Card -->
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="../image/LENA PAUL.webp" alt="Lena Paul">
+                </div>
+                
+                <div class="profile-info">
+                    <h3 style="font-size: 2.2rem; color: var(--pink); margin-bottom: 1rem;">Film Actor</h3>
+                    <p style="font-size: 1.4rem; color: #ccc; line-height: 1.6; margin-bottom: 2rem;">
+                        Lena Paul is an award-winning American adult film actress and director. 
+                        Known for her natural beauty and captivating performances, she has become 
+                        one of the most sought-after stars in the industry.
+                    </p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="number">50+</span>
+                            <span class="label">Awards</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">500+</span>
+                            <span class="label">Films</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">5M+</span>
+                            <span class="label">Followers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number">2015</span>
+                            <span class="label">Debut Year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Identity Card -->
+            <div class="identity-card">
+                <h2>IDENTITY</h2>
+                <table class="info-table">
+                    <tbody>
+                        <tr>
+                            <td>Full Name</td>
+                            <td>:</td>
+                            <td>Lena Paul</td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td>:</td>
+                            <td>5 ft 4 in (163 cm)</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td>:</td>
+                            <td>52 Kg (115 lbs)</td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>:</td>
+                            <td>28 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Birth Place</td>
+                            <td>:</td>
+                            <td>Florida, United States</td>
+                        </tr>
+                        <tr>
+                            <td>Marital Status</td>
+                            <td>:</td>
+                            <td>Unmarried</td>
+                        </tr>
+                        <tr>
+                            <td>Net Worth</td>
+                            <td>:</td>
+                            <td>$1M - $1.5M</td>
+                        </tr>
+                        <tr>
+                            <td>Eye Color</td>
+                            <td>:</td>
+                            <td>Brown</td>
+                        </tr>
+                        <tr>
+                            <td>Hair Color</td>
+                            <td>:</td>
+                            <td>Brown</td>
+                        </tr>
+                        <tr>
+                            <td>Measurements</td>
+                            <td>:</td>
+                            <td>34-26-36</td>
+                        </tr>
+                        <tr>
+                            <td>Specialties</td>
+                            <td>:</td>
+                            <td>Featured Performances, Directing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Media Section -->
+        <div class="media-section">
+            <h3>FEATURED WORKS</h3>
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="../image/3x-1.webp" alt="Award Winning">
+                    <div class="media-overlay">
+                        <div class="media-title">Award Winning Performance</div>
+                        <div class="media-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="../image/3x-2.webp" alt="Director">
+                    <div class="media-overlay">
+                        <div class="media-title">Best Director Award</div>
+                        <div class="media-rating">★★★★☆</div>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="../image/3x-3.webp" alt="Featured">
+                    <div class="media-overlay">
+                        <div class="media-title">Featured Star</div>
+                        <div class="media-rating">★★★★★</div>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <img src="../image/3x-4.webp" alt="Fan Favorite">
+                    <div class="media-overlay">
+                        <div class="media-title">Fan Favorite</div>
+                        <div class="media-rating">★★★★☆</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="../home.HTML" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Gallery
+            </a>
+            <button class="btn btn-book" onclick="bookNow()">
+                <i class="fas fa-star"></i>
+                Book Exclusive Content
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="profile-footer">
+            <p>© 2024 WebpronU. All rights reserved. | Content for adults only 18+</p>
+            <p style="margin-top: 1rem; font-size: 1.2rem; color: #666;">
+                This profile is for entertainment purposes only. All information is based on publicly available data.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Loading animation
+        // window.addEventListener('load', function() {
+        //     setTimeout(() => {
+        //         document.getElementById('loader').classList.add('fade-out');
+        //         setTimeout(() => {
+        //             document.getElementById('loader').style.display = 'none';
+        //         }, 200);
+        //     }, 150);
+        // });
+
+        // Book Now function
+        function bookNow() {
+            const btn = document.querySelector('.btn-book');
+            btn.innerHTML = '<i class="fas fa-check"></i> Booking Request Sent!';
+            btn.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+            btn.style.boxShadow = '0 5px 15px rgba(76, 175, 80, 0.4)';
+            
+            // Create a confetti effect
+            createConfetti();
+            
+            // Show notification
+            setTimeout(() => {
+                alert('Booking request for Lena Paul has been submitted! You will be contacted shortly.');
+            }, 1000);
+        }
+
+        // Simple confetti effect
+        function createConfetti() {
+            const colors = ['#ff4081', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3'];
+            for(let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-20px';
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                document.body.appendChild(confetti);
+                
+                // Animate
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 1000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+
+        // Add hover sound effect (optional)
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                // You can add a sound effect here
+                btn.style.transform = 'scale(1.05)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Table row hover effect
+        const tableRows = document.querySelectorAll('.info-table tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.backgroundColor = 'rgba(255, 64, 129, 0.1)';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>

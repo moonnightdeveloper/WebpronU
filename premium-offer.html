@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Offer - 50% Off Special Deal | WebpronU</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Get 50% off on premium subscription! Unlimited access to HD & 4K content, exclusive models, and premium features.">
+    <meta name="keywords" content="premium offer, 50% discount, subscription deal, adult content premium, exclusive access">
+    <meta name="rating" content="adult">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="age-verification" content="18">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Premium Offer - 50% Off Limited Time Deal">
+    <meta property="og:description" content="Unlock exclusive content with our special premium offer">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    
+    <style>
+        /* Premium Offer Specific Styles */
+        .premium-hero {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            padding: 120px 0 80px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,51,102,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(108,99,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0,212,255,0.1) 0%, transparent 50%);
+            animation: float 20s infinite linear;
+        }
+        
+        .premium-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .limited-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255,51,102,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .limited-badge i {
+            animation: spin 4s infinite linear;
+        }
+        
+        .premium-title {
+            font-size: 56px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .premium-subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #1a1a2e;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 10px;
+            transform: rotate(-5deg);
+            box-shadow: 0 5px 20px rgba(255,215,0,0.3);
+        }
+        
+        .countdown-section {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .countdown-title {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .countdown-timer-large {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .time-unit-large {
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .time-number {
+            display: block;
+            font-size: 48px;
+            font-weight: 800;
+            color: #ff3366;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255,51,102,0.5);
+        }
+        
+        .time-label {
+            display: block;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Pricing Plans */
+        .pricing-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        
+        .pricing-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: #1e1e1e;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .pricing-card.popular {
+            border-color: #ffd700;
+            background: linear-gradient(145deg, #1e1e1e, #222);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 800;
+            transform: rotate(45deg);
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .plan-price {
+            margin-bottom: 30px;
+        }
+        
+        .current-price {
+            font-size: 56px;
+            font-weight: 800;
+            color: #ff3366;
+            line-height: 1;
+        }
+        
+        .original-price {
+            font-size: 24px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        
+        .billing-period {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 10px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            color: rgba(255,255,255,0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-features li i {
+            color: #00d4ff;
+        }
+        
+        .plan-features li.disabled {
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .plan-features li.disabled i {
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .btn-premium-large {
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(255,51,102,0.3);
+        }
+        
+        .btn-premium-large:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,51,102,0.5);
+        }
+        
+        .btn-premium-large.gold {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+        }
+        
+        .btn-premium-large.gold:hover {
+            box-shadow: 0 15px 40px rgba(255,215,0,0.5);
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .comparison-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .comparison-table {
+            background: #1e1e1e;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 1fr repeat(3, 1fr);
+            background: #2d2d2d;
+            padding: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .table-header .empty {
+            text-align: left;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .table-header .plan-header {
+            text-align: center;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .table-header .plan-header.popular {
+            color: #ffd700;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr repeat(3, 1fr);
+            padding: 20px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            align-items: center;
+        }
+        
+        .table-row:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .table-row .feature-name {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .table-row .feature-value {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .table-row .feature-value i {
+            font-size: 20px;
+        }
+        
+        .table-row .feature-value .fa-check {
+            color: #00d4ff;
+        }
+        
+        .table-row .feature-value .fa-times {
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .table-footer {
+            padding: 30px 25px;
+            text-align: center;
+            background: rgba(255,51,102,0.1);
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        
+        .testimonials-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: #1e1e1e;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px;
+        }
+        
+        .testimonial-content {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .author-info p {
+            margin: 5px 0 0;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        /* FAQ Section */
+        .faq-premium {
+            padding: 80px 0;
+            background: #121212;
+        }
+        
+        .faq-premium-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .faq-item-premium {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question-premium {
+            width: 100%;
+            padding: 25px;
+            background: none;
+            border: none;
+            color: white;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .faq-question-premium:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .faq-answer-premium {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-premium p {
+            margin: 0;
+            padding: 25px 0;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255,51,102,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(108,99,255,0.1) 0%, transparent 50%);
+            animation: float 30s infinite linear;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .money-back-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .money-back-badge i {
+            color: #00d4ff;
+        }
+        
+        /* Payment Methods */
+        .payment-section {
+            padding: 60px 0;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        
+        .payment-title {
+            font-size: 24px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+        
+        .payment-methods-premium {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            background: #2d2d2d;
+            border-radius: 15px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .payment-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .payment-method i {
+            font-size: 32px;
+        }
+        
+        .fa-cc-visa { color: #1a1f71; }
+        .fa-cc-mastercard { color: #eb001b; }
+        .fa-cc-paypal { color: #003087; }
+        .fa-bitcoin { color: #f7931a; }
+        
+        /* Security Badges */
+        .security-section {
+            padding: 40px 0;
+            background: #121212;
+            text-align: center;
+        }
+        
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .security-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .security-badge i {
+            font-size: 32px;
+            color: #00d4ff;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .premium-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .premium-title {
+                font-size: 36px;
+            }
+            
+            .premium-subtitle {
+                font-size: 20px;
+            }
+            
+            .time-unit-large {
+                min-width: 80px;
+            }
+            
+            .time-number {
+                font-size: 36px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular::before {
+                right: -30px;
+                padding: 6px 30px;
+                font-size: 10px;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr 1fr;
+                font-size: 14px;
+            }
+            
+            .table-header .empty,
+            .table-row .feature-name {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 36px;
+            }
+            
+            .payment-methods-premium {
+                gap: 15px;
+            }
+            
+            .payment-method {
+                padding: 15px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .premium-title {
+                font-size: 28px;
+            }
+            
+            .premium-subtitle {
+                font-size: 18px;
+            }
+            
+            .countdown-timer-large {
+                gap: 10px;
+            }
+            
+            .time-unit-large {
+                min-width: 60px;
+            }
+            
+            .time-number {
+                font-size: 28px;
+            }
+            
+            .current-price {
+                font-size: 42px;
+            }
+            
+            .payment-methods-premium {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .security-badges {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Age Verification -->
+    <!-- <div id="age-verification" class="age-verification-modal">
+        <div class="verification-content">
+            <div class="verification-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Age Verification Required</h2>
+            </div>
+            <div class="verification-body">
+                <p>Premium subscription is available only for adults 18+</p>
+                <div class="verification-actions">
+                    <button id="enter-site" class="btn btn-primary">
+                        <i class="fas fa-check-circle"></i> I AM 18 OR OLDER
+                    </button>
+                    <button id="exit-site" class="btn btn-secondary">
+                        <i class="fas fa-times-circle"></i> EXIT SITE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="site-announcement">
+                        <i class="fas fa-bolt"></i>
+                        <span>🔥 LIMITED TIME: 50% OFF Premium Subscription!</span>
+                    </div>
+                    <div class="header-top-links">
+                        <a href="support.html"><i class="fas fa-headset"></i> Premium Support</a>
+                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="index.html" class="logo">
+                            <img src="image/logo.png" alt="WebpronU" class="logo-img">
+                            <span class="logo-text">Webpron<span class="logo-highlight">U</span></span>
+                        </a>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <a href="index.html" class="action-btn" title="Back to Home">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <a href="premium-offer.html#pricing" class="action-btn login-btn">
+                                <i class="fas fa-crown"></i>
+                                <span class="btn-text">Get Premium</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="premium-hero">
+            <div class="container">
+                <div class="premium-hero-content">
+                    <div class="limited-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>LIMITED TIME OFFER</span>
+                    </div>
+                    
+                    <h1 class="premium-title">
+                        Get Premium Access for
+                        <span class="discount-badge">50% OFF</span>
+                    </h1>
+                    
+                    <p class="premium-subtitle">
+                        Unlock exclusive HD & 4K content, premium models, and advanced features.
+                        Limited time offer - don't miss out!
+                    </p>
+                    
+                    <div class="countdown-section">
+                        <h3 class="countdown-title">Offer Ends In:</h3>
+                        <div class="countdown-timer-large">
+                            <div class="time-unit-large">
+                                <span class="time-number" id="countdown-hours">48</span>
+                                <span class="time-label">Hours</span>
+                            </div>
+                            <div class="time-unit-large">
+                                <span class="time-number" id="countdown-minutes">00</span>
+                                <span class="time-label">Minutes</span>
+                            </div>
+                            <div class="time-unit-large">
+                                <span class="time-number" id="countdown-seconds">00</span>
+                                <span class="time-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#pricing" class="btn-premium-large gold">
+                        <i class="fas fa-bolt"></i>
+                        CLAIM 50% DISCOUNT NOW
+                    </a>
+                    
+                    <p style="margin-top: 20px; color: rgba(255,255,255,0.7); font-size: 14px;">
+                        <i class="fas fa-shield-alt"></i>
+                        Secure payment • Cancel anytime • 30-day money-back guarantee
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Plans -->
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="pricing-title">Choose Your Premium Plan</h2>
+                
+                <div class="pricing-grid">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Basic</h3>
+                        
+                        <div class="plan-price">
+                            <span class="current-price">$9.99</span>
+                            <span class="original-price">$19.99</span>
+                            <div class="billing-period">per month</div>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> HD Video Access</li>
+                            <li><i class="fas fa-check"></i> 500+ Videos</li>
+                            <li><i class="fas fa-check"></i> Basic Models</li>
+                            <li><i class="fas fa-times"></i> <span class="disabled">4K Content</span></li>
+                            <li><i class="fas fa-times"></i> <span class="disabled">Live Shows</span></li>
+                            <li><i class="fas fa-times"></i> <span class="disabled">Download Option</span></li>
+                            <li><i class="fas fa-times"></i> <span class="disabled">Priority Support</span></li>
+                        </ul>
+                        
+                        <button class="btn-premium-large" data-plan="basic">
+                            Select Basic Plan
+                        </button>
+                    </div>
+
+                    <!-- Premium Plan (Most Popular) -->
+                    <div class="pricing-card popular">
+                        <h3 class="plan-name">Premium</h3>
+                        
+                        <div class="plan-price">
+                            <span class="current-price">$19.99</span>
+                            <span class="original-price">$39.99</span>
+                            <div class="billing-period">per month</div>
+                            <div style="color: #ffd700; font-size: 14px; margin-top: 5px;">
+                                <i class="fas fa-star"></i> BEST VALUE
+                            </div>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Full HD Video Access</li>
+                            <li><i class="fas fa-check"></i> 1,200+ Videos</li>
+                            <li><i class="fas fa-check"></i> Premium Models</li>
+                            <li><i class="fas fa-check"></i> 4K Ultra HD Content</li>
+                            <li><i class="fas fa-check"></i> Live Shows Access</li>
+                            <li><i class="fas fa-check"></i> Download Videos</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                        </ul>
+                        
+                        <button class="btn-premium-large gold" data-plan="premium">
+                            <i class="fas fa-crown"></i>
+                            GET PREMIUM - 50% OFF
+                        </button>
+                    </div>
+
+                    <!-- VIP Plan -->
+                    <div class="pricing-card">
+                        <h3 class="plan-name">VIP</h3>
+                        
+                        <div class="plan-price">
+                            <span class="current-price">$49.99</span>
+                            <span class="original-price">$99.99</span>
+                            <div class="billing-period">per month</div>
+                        </div>
+                        
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> Everything in Premium</li>
+                            <li><i class="fas fa-check"></i> 5,000+ Videos</li>
+                            <li><i class="fas fa-check"></i> VIP Exclusive Models</li>
+                            <li><i class="fas fa-check"></i> Early Access to Content</li>
+                            <li><i class="fas fa-check"></i> Custom Requests</li>
+                            <li><i class="fas fa-check"></i> Dedicated Support Agent</li>
+                            <li><i class="fas fa-check"></i> Ad-Free Experience</li>
+                        </ul>
+                        
+                        <button class="btn-premium-large" data-plan="vip">
+                            Select VIP Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <div class="container">
+                <h2 class="comparison-title">Compare Plans</h2>
+                
+                <div class="comparison-table">
+                    <div class="table-header">
+                        <div class="empty">Features</div>
+                        <div class="plan-header">Basic</div>
+                        <div class="plan-header popular">Premium</div>
+                        <div class="plan-header">VIP</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Video Quality</div>
+                        <div class="feature-value">HD</div>
+                        <div class="feature-value">4K Ultra HD</div>
+                        <div class="feature-value">4K Ultra HD</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Video Library</div>
+                        <div class="feature-value">500+</div>
+                        <div class="feature-value">1,200+</div>
+                        <div class="feature-value">5,000+</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Models Access</div>
+                        <div class="feature-value">Basic</div>
+                        <div class="feature-value">Premium</div>
+                        <div class="feature-value">VIP Exclusive</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Live Shows</div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Download Videos</div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Priority Support</div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Custom Requests</div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="feature-name">Ad-Free</div>
+                        <div class="feature-value"><i class="fas fa-times"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                        <div class="feature-value"><i class="fas fa-check"></i></div>
+                    </div>
+                    
+                    <div class="table-footer">
+                        <p style="color: white; font-size: 18px; margin-bottom: 20px;">
+                            <i class="fas fa-star"></i>
+                            Premium plan offers the best value with 50% discount
+                        </p>
+                        <a href="#pricing" class="btn-premium-large gold">
+                            <i class="fas fa-bolt"></i>
+                            UPGRADE TO PREMIUM NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="testimonials-title">What Our Premium Members Say</h2>
+                
+                <div class="testimonials-slider">
+                    <div class="swiper testimonialsSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Testimonial 1 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-content">
+                                        "The premium subscription completely changed my experience. The 4K quality is incredible and the exclusive content is worth every penny. The 50% discount made it an absolute no-brainer!"
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">MJ</div>
+                                        <div class="author-info">
+                                            <h4>Michael Johnson</h4>
+                                            <p>Premium Member since 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonial 2 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-content">
+                                        "I was hesitant at first, but the money-back guarantee gave me confidence. The video quality and model selection exceeded my expectations. The download feature is perfect for when I travel."
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">SR</div>
+                                        <div class="author-info">
+                                            <h4>Sarah Roberts</h4>
+                                            <p>VIP Member</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonial 3 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-content">
+                                        "The live shows are amazing! Premium access gives you front-row seats to exclusive performances. Customer support is responsive and helpful. Best adult entertainment subscription out there."
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar">DK</div>
+                                        <div class="author-info">
+                                            <h4>David Kim</h4>
+                                            <p>Premium Member</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-premium">
+            <div class="container">
+                <h2 class="faq-premium-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            What payment methods do you accept?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and cryptocurrencies including Bitcoin. All payments are encrypted and secure.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            Can I cancel my subscription anytime?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>Yes, you can cancel your subscription at any time from your account settings. Your access will continue until the end of your billing period.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            Is there a money-back guarantee?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>Absolutely! We offer a 30-day money-back guarantee. If you're not satisfied with your premium experience, contact our support for a full refund.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            What devices can I use?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>Our platform works on all devices: Windows, Mac, iOS, Android, Smart TVs. You can stream on up to 3 devices simultaneously with premium.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            How does the 50% discount work?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>The 50% discount is applied automatically when you select a premium plan during this limited-time offer. The discounted rate continues as long as you maintain your subscription.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-premium">
+                        <button class="faq-question-premium">
+                            Is my privacy protected?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer-premium">
+                            <p>Yes! We use bank-level encryption, never share your data, and offer anonymous payment options. Your privacy is our top priority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Experience Premium?</h2>
+                    <p class="cta-subtitle">
+                        Join thousands of satisfied members who upgraded to premium. 
+                        Get unlimited access to exclusive content, highest quality videos, 
+                        and premium features at 50% off.
+                    </p>
+                    
+                    <div class="money-back-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>30-Day Money Back Guarantee</span>
+                    </div>
+                    
+                    <a href="#pricing" class="btn-premium-large gold" style="font-size: 22px; padding: 22px 50px;">
+                        <i class="fas fa-crown"></i>
+                        GET PREMIUM NOW - 50% OFF
+                    </a>
+                    
+                    <p style="margin-top: 30px; color: rgba(255,255,255,0.7); font-size: 16px;">
+                        <i class="fas fa-lock"></i>
+                        Secure checkout • No long-term commitment • Cancel anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Methods -->
+        <section class="payment-section">
+            <div class="container">
+                <h3 class="payment-title">Secure Payment Methods</h3>
+                <div class="payment-methods-premium">
+                    <div class="payment-method">
+                        <i class="fab fa-cc-visa"></i>
+                        <span>Visa</span>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fab fa-cc-mastercard"></i>
+                        <span>MasterCard</span>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fab fa-cc-paypal"></i>
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-method">
+                        <i class="fab fa-bitcoin"></i>
+                        <span>Bitcoin</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Badges -->
+        <section class="security-section">
+            <div class="container">
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>256-bit SSL Encryption</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Privacy Protected</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Payments</span>
+                    </div>
+                    <div class="security-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>Trusted by Thousands</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="image/logo.png" alt="WebpronU">
+                            <span>WebpronU Premium</span>
+                        </div>
+                        <p class="footer-description">
+                            Premium adult entertainment with exclusive content, 
+                            highest quality videos, and premium features.
+                        </p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Premium Features</h4>
+                        <ul>
+                            <li><a href="#pricing">4K Ultra HD</a></li>
+                            <li><a href="#pricing">Live Shows</a></li>
+                            <li><a href="#pricing">Exclusive Models</a></li>
+                            <li><a href="#pricing">Download Option</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="support.html">Premium Support</a></li>
+                            <li><a href="faq.html">Premium FAQ</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="refund.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="age-verification.html">Age Verification</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 WebpronU Premium. All rights reserved. Adults only (18+)</p>
+                    <div class="footer-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Premium content for adults 18+ only. All models are 18+.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h2 style="text-align: center; margin-bottom: 30px;">
+                    <i class="fas fa-lock"></i> Secure Checkout
+                </h2>
+                
+                <div id="checkout-summary" style="background: #2d2d2d; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                    <!-- Checkout summary will be populated by JS -->
+                </div>
+                
+                <form id="checkout-form" style="display: none;">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-premium-large gold" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-lock"></i>
+                        PAY NOW & GET ACCESS
+                    </button>
+                </form>
+                
+                <div id="checkout-success" style="display: none; text-align: center; padding: 30px;">
+                    <i class="fas fa-check-circle" style="font-size: 60px; color: #00d4ff; margin-bottom: 20px;"></i>
+                    <h3 style="color: white; margin-bottom: 15px;">Payment Successful!</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 30px;">
+                        Welcome to WebpronU Premium! Your account has been upgraded.
+                    </p>
+                    <a href="premium-dashboard.html" class="btn-premium-large gold">
+                        <i class="fas fa-rocket"></i>
+                        GO TO PREMIUM DASHBOARD
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    
+    <!-- Premium Offer Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Age Verification
+            if (!localStorage.getItem('ageVerified')) {
+                document.getElementById('age-verification').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            document.getElementById('enter-site').addEventListener('click', function() {
+                localStorage.setItem('ageVerified', 'true');
+                document.getElementById('age-verification').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            document.getElementById('exit-site').addEventListener('click', function() {
+                window.location.href = 'https://www.google.com';
+            });
+
+            // Countdown Timer
+            function updateCountdown() {
+                const hoursEl = document.getElementById('countdown-hours');
+                const minutesEl = document.getElementById('countdown-minutes');
+                const secondsEl = document.getElementById('countdown-seconds');
+                
+                if (hoursEl && minutesEl && secondsEl) {
+                    let hours = parseInt(hoursEl.textContent);
+                    let minutes = parseInt(minutesEl.textContent);
+                    let seconds = parseInt(secondsEl.textContent);
+                    
+                    if (seconds > 0) {
+                        seconds--;
+                    } else {
+                        seconds = 59;
+                        if (minutes > 0) {
+                            minutes--;
+                        } else {
+                            minutes = 59;
+                            if (hours > 0) {
+                                hours--;
+                            } else {
+                                // Offer expired
+                                hours = 0;
+                                minutes = 0;
+                                seconds = 0;
+                                document.querySelector('.discount-badge').textContent = 'OFFER EXPIRED';
+                                document.querySelector('.discount-badge').style.background = '#666';
+                            }
+                        }
+                    }
+                    
+                    hoursEl.textContent = hours.toString().padStart(2, '0');
+                    minutesEl.textContent = minutes.toString().padStart(2, '0');
+                    secondsEl.textContent = seconds.toString().padStart(2, '0');
+                    
+                    // Pulse animation
+                    secondsEl.classList.add('pulse');
+                    setTimeout(() => secondsEl.classList.remove('pulse'), 500);
+                }
+            }
+            
+            setInterval(updateCountdown, 1000);
+
+            // Initialize testimonials slider
+            const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question-premium');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle current answer
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                    
+                    // Close other answers
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            const otherAnswer = otherQuestion.nextElementSibling;
+                            const otherIcon = otherQuestion.querySelector('i');
+                            otherAnswer.style.maxHeight = null;
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            });
+
+            // Checkout functionality
+            const checkoutModal = document.getElementById('checkout-modal');
+            const checkoutButtons = document.querySelectorAll('.btn-premium-large');
+            const checkoutSummary = document.getElementById('checkout-summary');
+            const checkoutForm = document.getElementById('checkout-form');
+            const checkoutSuccess = document.getElementById('checkout-success');
+            
+            const plans = {
+                basic: {
+                    name: 'Basic Plan',
+                    price: 9.99,
+                    originalPrice: 19.99,
+                    features: ['HD Video Access', '500+ Videos', 'Basic Models']
+                },
+                premium: {
+                    name: 'Premium Plan',
+                    price: 19.99,
+                    originalPrice: 39.99,
+                    features: ['Full HD & 4K Access', '1,200+ Videos', 'Premium Models', 'Live Shows', 'Download Option']
+                },
+                vip: {
+                    name: 'VIP Plan',
+                    price: 49.99,
+                    originalPrice: 99.99,
+                    features: ['Everything in Premium', '5,000+ Videos', 'VIP Exclusive Models', 'Early Access', 'Custom Requests']
+                }
+            };
+            
+            checkoutButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const planType = this.dataset.plan || 'premium';
+                    const plan = plans[planType];
+                    
+                    // Update checkout summary
+                    checkoutSummary.innerHTML = `
+                        <h3 style="color: white; margin-bottom: 15px;">Order Summary</h3>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: rgba(255,255,255,0.8);">Plan:</span>
+                            <span style="color: white; font-weight: 600;">${plan.name}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: rgba(255,255,255,0.8);">Billing:</span>
+                            <span style="color: white; font-weight: 600;">Monthly</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: rgba(255,255,255,0.8);">Discount:</span>
+                            <span style="color: #00d4ff; font-weight: 600;">50% OFF</span>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0;"></div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="color: rgba(255,255,255,0.8);">Original Price:</span>
+                            <span style="color: rgba(255,255,255,0.5); text-decoration: line-through;">$${plan.originalPrice}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                            <span style="color: rgba(255,255,255,0.8);">Your Price:</span>
+                            <span style="font-size: 24px; font-weight: 800; color: #ff3366;">$${plan.price}</span>
+                        </div>
+                        <div style="font-size: 14px; color: rgba(255,255,255,0.7);">
+                            <i class="fas fa-sync-alt"></i> Recurring monthly. Cancel anytime.
+                        </div>
+                    `;
+                    
+                    // Reset form and success message
+                    checkoutForm.style.display = 'block';
+                    checkoutSuccess.style.display = 'none';
+                    checkoutForm.reset();
+                    
+                    // Show modal
+                    checkoutModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal
+            const closeButtons = document.querySelectorAll('.modal-close');
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close modal on outside click
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('modal')) {
+                    e.target.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Handle checkout form submission
+            if (checkoutForm) {
+                checkoutForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate payment processing
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        checkoutForm.style.display = 'none';
+                        checkoutSuccess.style.display = 'block';
+                        
+                        // In real implementation, you would redirect to dashboard
+                        // window.location.href = 'premium-dashboard.html';
+                    }, 2000);
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add CSS for form elements
+            const style = document.createElement('style');
+            style.textContent = `
+                .form-group {
+                    margin-bottom: 20px;
+                }
+                
+                .form-group label {
+                    display: block;
+                    color: rgba(255,255,255,0.9);
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                }
+                
+                .form-group input {
+                    width: 100%;
+                    padding: 12px 15px;
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 16px;
+                }
+                
+                .form-group input:focus {
+                    outline: none;
+                    border-color: #ff3366;
+                    box-shadow: 0 0 0 2px rgba(255,51,102,0.1);
+                }
+                
+                .form-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px;
+                }
+                
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.5; }
+                }
+                
+                .fa-spin {
+                    animation: fa-spin 1s infinite linear;
+                }
+                
+                @keyframes fa-spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+
+</body>
+</html>

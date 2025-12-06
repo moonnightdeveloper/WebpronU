@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Now - WebpronU</title>
+
+    <!-- Meta tags -->
+    <meta name="description" content="Discover trending adult content, most popular models, and hottest videos on WebpronU">
+    <meta name="keywords" content="trending, popular, hot, viral, adult content, models">
+    <meta name="rating" content="adult">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="age-verification" content="18">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+</head>
+
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="site-announcement">
+                        <i class="fas fa-fire"></i>
+                        <span>🔥 Trending Content Updated Hourly!</span>
+                    </div>
+                    <div class="header-top-links">
+                        <a href="support.html"><i class="fas fa-headset"></i> Support</a>
+                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="index.html" class="logo">
+                            <img src="image/logo.png" alt="WebpronU" class="logo-img">
+                            <span class="logo-text">Webpron<span class="logo-highlight">U</span></span>
+                        </a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <form action="search.html" class="search-form" method="get" id="search-form">
+                            <div class="search-input-group">
+                                <input type="search" name="q" placeholder="Search trending content..." id="search-box" autocomplete="off">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- User Actions -->
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <button id="mobile-search-btn" class="action-btn mobile-only">
+                                <i class="fas fa-search"></i>
+                            </button>
+
+                            <div class="notification-dropdown">
+                                <button class="action-btn notification-btn">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="notification-count">3</span>
+                                </button>
+                            </div>
+
+                            <button id="login-btn" class="action-btn login-btn">
+                                <i class="fas fa-user"></i>
+                                <span class="btn-text">Login</span>
+                            </button>
+
+                            <button id="menu-toggle" class="action-btn menu-toggle">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-navigation">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="featured.html" class="nav-link">
+                            <i class="fas fa-star"></i>
+                            <span>Featured</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="categories.html" class="nav-link">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="new-arrivals.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>New Arrivals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="trending.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Trending</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="premium.html" class="nav-link premium">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-navigation">
+        <div class="mobile-nav-content">
+            <a href="index.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="featured.html" class="mobile-nav-item">
+                <i class="fas fa-star"></i>
+                <span>Featured</span>
+            </a>
+            <a href="categories.html" class="mobile-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="trending.html" class="mobile-nav-item active">
+                <i class="fas fa-chart-line"></i>
+                <span>Trending</span>
+            </a>
+            <a href="profile.html" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Trending Hero Section -->
+        <section class="hero-section" style="min-height: 60vh; padding-top: 120px;">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">🔥 Trending</span>
+                            <span class="title-line highlight">Right Now</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Discover what's hot and popular in real-time
+                        </p>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Real-time Analytics</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-fire"></i>
+                                <span>Most Viewed Today</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>Community Picks</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-history"></i>
+                                <span>Updated Hourly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Filters -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="trending-filters">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">
+                            <i class="fas fa-globe"></i> All Trending
+                        </button>
+                        <button class="filter-tab" data-filter="models">
+                            <i class="fas fa-user"></i> Models
+                        </button>
+                        <button class="filter-tab" data-filter="videos">
+                            <i class="fas fa-video"></i> Videos
+                        </button>
+                        <button class="filter-tab" data-filter="categories">
+                            <i class="fas fa-tag"></i> Categories
+                        </button>
+                        <button class="filter-tab" data-filter="live">
+                            <i class="fas fa-broadcast-tower"></i> Live
+                        </button>
+                    </div>
+                    <div class="time-filters">
+                        <select class="time-filter">
+                            <option value="today">Today</option>
+                            <option value="week" selected>This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="all">All Time</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Models Section -->
+        <section class="section trending-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-crown"></i>
+                        Trending Models
+                        <span class="trending-badge">Updated 1h ago</span>
+                    </h2>
+                    <p class="section-subtitle">Most viewed models this week</p>
+                </div>
+
+                <div class="models-grid trending-models">
+                    <!-- Model 1 -->
+                    <div class="model-card trending-card">
+                        <div class="trending-rank">#1</div>
+                        <div class="model-image">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Model">
+                            <span class="model-badge trending-hot">
+                                <i class="fas fa-fire"></i> Hot
+                            </span>
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Aria Nova</h3>
+                            <p class="model-category">Cosplay & Fantasy</p>
+                            <div class="trending-stats">
+                                <div class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    <span>1.2M views</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>45.2K likes</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>+125%</span>
+                                </div>
+                            </div>
+                            <div class="model-price">
+                                <span class="price-current">$29.99</span>
+                                <span class="price-original">$49.99</span>
+                            </div>
+                            <a href="model-aria.html" class="btn btn-primary btn-block">
+                                <i class="fas fa-play"></i> View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Model 2 -->
+                    <div class="model-card trending-card">
+                        <div class="trending-rank">#2</div>
+                        <div class="model-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Model">
+                            <span class="model-badge trending-rising">
+                                <i class="fas fa-arrow-up"></i> Rising
+                            </span>
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Sophia Ray</h3>
+                            <p class="model-category">HD & 4K Content</p>
+                            <div class="trending-stats">
+                                <div class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    <span>980K views</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>38.7K likes</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>+89%</span>
+                                </div>
+                            </div>
+                            <div class="model-price">
+                                <span class="price-current">$24.99</span>
+                                <span class="price-original">$39.99</span>
+                            </div>
+                            <a href="model-sophia.html" class="btn btn-primary btn-block">
+                                <i class="fas fa-play"></i> View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Model 3 -->
+                    <div class="model-card trending-card">
+                        <div class="trending-rank">#3</div>
+                        <div class="model-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Model">
+                            <span class="model-badge trending-new">
+                                <i class="fas fa-star"></i> New
+                            </span>
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Luna Sky</h3>
+                            <p class="model-category">Live Shows</p>
+                            <div class="trending-stats">
+                                <div class="stat">
+                                    <i class="fas fa-eye"></i>
+                                    <span>850K views</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-heart"></i>
+                                    <span>32.1K likes</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>+156%</span>
+                                </div>
+                            </div>
+                            <div class="model-price">
+                                <span class="price-current">$19.99</span>
+                                <span class="price-original">$29.99</span>
+                            </div>
+                            <a href="model-luna.html" class="btn btn-primary btn-block">
+                                <i class="fas fa-play"></i> View Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Add more trending models as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Videos Section -->
+        <section class="section trending-videos-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-video"></i>
+                        Trending Videos
+                    </h2>
+                    <p class="section-subtitle">Most watched videos today</p>
+                </div>
+
+                <div class="videos-grid">
+                    <!-- Video 1 -->
+                    <div class="video-card trending-video">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video">
+                            <div class="video-duration">25:42</div>
+                            <div class="video-views">
+                                <i class="fas fa-eye"></i> 450K
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Midnight Fantasy - Exclusive HD</h3>
+                            <p class="video-model">With Aria Nova</p>
+                            <div class="video-stats">
+                                <span class="video-likes">
+                                    <i class="fas fa-heart"></i> 18.5K
+                                </span>
+                                <span class="video-time">
+                                    <i class="fas fa-clock"></i> 2 hours ago
+                                </span>
+                            </div>
+                            <div class="video-tags">
+                                <span class="tag">HD</span>
+                                <span class="tag">Exclusive</span>
+                                <span class="tag">Cosplay</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="video-card trending-video">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1535551951406-a19828b0a76b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video">
+                            <div class="video-duration">18:15</div>
+                            <div class="video-views">
+                                <i class="fas fa-eye"></i> 380K
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">Pool Party Summer Special</h3>
+                            <p class="video-model">With Sophia Ray</p>
+                            <div class="video-stats">
+                                <span class="video-likes">
+                                    <i class="fas fa-heart"></i> 15.2K
+                                </span>
+                                <span class="video-time">
+                                    <i class="fas fa-clock"></i> 5 hours ago
+                                </span>
+                            </div>
+                            <div class="video-tags">
+                                <span class="tag">Outdoor</span>
+                                <span class="tag">Summer</span>
+                                <span class="tag">4K</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more trending videos as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Categories Section -->
+        <section class="section trending-categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-tags"></i>
+                        Trending Categories
+                    </h2>
+                    <p class="section-subtitle">Popular content categories</p>
+                </div>
+
+                <div class="categories-grid trending-categories">
+                    <div class="category-card trending-category">
+                        <div class="category-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <h3>Cosplay & Fantasy</h3>
+                        <p>Roleplay and costume content</p>
+                        <div class="trending-growth">
+                            <i class="fas fa-chart-line"></i>
+                            <span>+85% this week</span>
+                        </div>
+                        <span class="category-count">450+ Videos</span>
+                    </div>
+
+                    <div class="category-card trending-category">
+                        <div class="category-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3>Live Shows</h3>
+                        <p>Real-time streaming</p>
+                        <div class="trending-growth">
+                            <i class="fas fa-chart-line"></i>
+                            <span>+120% this week</span>
+                        </div>
+                        <span class="category-count">200+ Live</span>
+                    </div>
+
+                    <div class="category-card trending-category">
+                        <div class="category-icon">
+                            <i class="fas fa-hd"></i>
+                        </div>
+                        <h3>4K Ultra HD</h3>
+                        <p>Highest quality content</p>
+                        <div class="trending-growth">
+                            <i class="fas fa-chart-line"></i>
+                            <span>+65% this week</span>
+                        </div>
+                        <span class="category-count">300+ Videos</span>
+                    </div>
+
+                    <div class="category-card trending-category">
+                        <div class="category-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h3>Homemade</h3>
+                        <p>Authentic amateur content</p>
+                        <div class="trending-growth">
+                            <i class="fas fa-chart-line"></i>
+                            <span>+95% this week</span>
+                        </div>
+                        <span class="category-count">800+ Videos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats & Insights -->
+        <section class="section insights-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Trending Insights
+                    </h2>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Peak Hours</h3>
+                        <p>Most active: 8 PM - 12 AM EST</p>
+                        <div class="insight-data">
+                            <span>75% of total views</span>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Top Regions</h3>
+                        <p>North America, Europe, Australia</p>
+                        <div class="insight-data">
+                            <span>68% of traffic</span>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Device Usage</h3>
+                        <p>Mobile: 65%, Desktop: 35%</p>
+                        <div class="insight-data">
+                            <span>Mobile dominant</span>
+                        </div>
+                    </div>
+
+                    <div class="insight-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Weekly Pattern</h3>
+                        <p>Weekends see 40% more activity</p>
+                        <div class="insight-data">
+                            <span>Peak on Saturdays</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <!-- Same footer as index.html -->
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="image/logo.png" alt="WebpronU">
+                            <span>WebpronU</span>
+                        </div>
+                        <p class="footer-description">
+                            Discover trending adult content and hottest models.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Trending</h4>
+                        <ul>
+                            <li><a href="trending-models.html">Models</a></li>
+                            <li><a href="trending-videos.html">Videos</a></li>
+                            <li><a href="trending-categories.html">Categories</a></li>
+                            <li><a href="trending-live.html">Live Shows</a></li>
+                            <li><a href="trending-weekly.html">Weekly Top</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="featured.html">Featured</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="new-arrivals.html">New Arrivals</a></li>
+                            <li><a href="premium.html">Premium</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms</a></li>
+                            <li><a href="privacy.html">Privacy</a></li>
+                            <li><a href="age-verification.html">Age Verification</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 WebpronU. Trending data updated hourly.</p>
+                    <div class="footer-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>This site contains explicit adult content. All models are 18+.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Additional CSS for Trending Page -->
+    <style>
+        /* Trending Page Specific Styles */
+        .trending-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            background: var(--dark-light);
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--gray);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .filter-tab.active {
+            background: var(--gradient-primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .filter-tab:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--light);
+        }
+
+        .time-filters select {
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        .trending-badge {
+            background: var(--gradient-primary);
+            color: var(--light);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            margin-left: var(--space-sm);
+            font-weight: 600;
+        }
+
+        .trending-card {
+            position: relative;
+        }
+
+        .trending-rank {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-primary);
+            color: var(--light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .trending-hot {
+            background: linear-gradient(135deg, #FF3366, #FF9966);
+        }
+
+        .trending-rising {
+            background: linear-gradient(135deg, #6C63FF, #00D4FF);
+        }
+
+        .trending-new {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+        }
+
+        .trending-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .trending-stats .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-sm);
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-md);
+        }
+
+        .trending-stats .stat i {
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .trending-stats .stat span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .video-card {
+            background: var(--dark-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.1);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: var(--light);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+
+        .video-views {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: var(--light);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+
+        .video-info {
+            padding: var(--space-md);
+        }
+
+        .video-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .video-model {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .video-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .video-tags {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+        }
+
+        .video-tags .tag {
+            background: rgba(255,51,102,0.1);
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+
+        .trending-growth {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--success);
+            margin: var(--space-sm) 0;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .insight-card {
+            background: var(--dark-light);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .insight-card i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .insight-card h3 {
+            margin-bottom: var(--space-xs);
+        }
+
+        .insight-card p {
+            color: var(--gray);
+            margin-bottom: var(--space-sm);
+        }
+
+        .insight-data {
+            background: rgba(255,51,102,0.1);
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .trending-filters {
+                flex-direction: column;
+                gap: var(--space-md);
+                align-items: stretch;
+            }
+
+            .filter-tabs {
+                justify-content: center;
+            }
+
+            .trending-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    // Implement filtering logic here
+                });
+            });
+
+            // Time filter functionality
+            const timeFilter = document.querySelector('.time-filter');
+            timeFilter.addEventListener('change', function() {
+                // Implement time-based filtering here
+            });
+
+            // Update trending stats in real-time
+            function updateTrendingStats() {
+                const now = new Date();
+                document.querySelectorAll('.trending-badge').forEach(badge => {
+                    badge.textContent = `Updated ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+                });
+            }
+
+            // Update every minute
+            setInterval(updateTrendingStats, 60000);
+            updateTrendingStats();
+        });
+    </script>
+</body>
+</html>
