@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themed Shows - WebpronU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .theme-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .theme-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .theme-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .theme-card:hover .theme-image img {
+            transform: scale(1.1);
+        }
+
+        .theme-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .theme-info {
+            padding: 20px;
+        }
+
+        .theme-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .theme-desc {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .theme-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .theme-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .featured-themes {
+            margin: 50px 0;
+        }
+
+        .featured-slider {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .featured-slide {
+            position: relative;
+            height: 400px;
+        }
+
+        .featured-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 30px;
+            color: white;
+        }
+
+        .featured-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .featured-desc {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .theme-categories {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .theme-category {
+            background: rgba(255, 51, 102, 0.1);
+            color: #FF3366;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .theme-category.active {
+            background: #FF3366;
+            color: white;
+            border-color: #FF3366;
+        }
+
+        .theme-category:hover {
+            transform: translateY(-3px);
+        }
+
+        .upcoming-events {
+            margin-top: 50px;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .event-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 5px solid #FF3366;
+        }
+
+        .event-date {
+            color: #FF3366;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .event-time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #999;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <!-- Header content from index.html -->
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="hero-section"
+            style="min-height: 50vh; padding-top: 120px; background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.8)), url('image/banner-bg1.webp') no-repeat center center;">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Themed</span>
+                            <span class="title-line highlight">Shows</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Special theme events and roleplay experiences
+                        </p>
+                        <div class="hero-features">
+                            <div class="feature">
+                                <i class="fas fa-mask"></i>
+                                <span>Roleplay</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-calendar-star"></i>
+                                <span>Special Events</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users-crown"></i>
+                                <span>Group Themes</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Premium Content</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme Categories -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-tags"></i>
+                        Popular Themes
+                    </h2>
+                </div>
+
+                <div class="theme-categories">
+                    <span class="theme-category active">All Themes</span>
+                    <span class="theme-category">Roleplay</span>
+                    <span class="theme-category">Cosplay</span>
+                    <span class="theme-category">Fantasy</span>
+                    <span class="theme-category">BDSM</span>
+                    <span class="theme-category">Fetish</span>
+                    <span class="theme-category">Costume</span>
+                    <span class="theme-category">Holiday</span>
+                </div>
+
+                <div class="themes-grid">
+                    <!-- Theme Card 1 -->
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="School Roleplay">
+                            <div class="theme-badge">Popular</div>
+                        </div>
+                        <div class="theme-info">
+                            <h3 class="theme-title">School Roleplay</h3>
+                            <p class="theme-desc">Naughty student and teacher scenarios</p>
+                            <div class="theme-stats">
+                                <span><i class="fas fa-video"></i> 45 shows</span>
+                                <span><i class="fas fa-users"></i> 1.2k followers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theme Card 2 -->
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <img src="https://images.unsplash.com/photo-1516571137133-1be29e43143b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Nurse Fantasy">
+                            <div class="theme-badge">New</div>
+                        </div>
+                        <div class="theme-info">
+                            <h3 class="theme-title">Nurse Fantasy</h3>
+                            <p class="theme-desc">Medical roleplay with naughty nurses</p>
+                            <div class="theme-stats">
+                                <span><i class="fas fa-video"></i> 32 shows</span>
+                                <span><i class="fas fa-users"></i> 890 followers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theme Card 3 -->
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Cosplay">
+                            <div class="theme-badge">Premium</div>
+                        </div>
+                        <div class="theme-info">
+                            <h3 class="theme-title">Anime Cosplay</h3>
+                            <p class="theme-desc">Popular anime character roleplays</p>
+                            <div class="theme-stats">
+                                <span><i class="fas fa-video"></i> 67 shows</span>
+                                <span><i class="fas fa-users"></i> 2.3k followers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Theme Card 4 -->
+                    <div class="theme-card">
+                        <div class="theme-image">
+                            <img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Boss & Secretary">
+                            <div class="theme-badge">Trending</div>
+                        </div>
+                        <div class="theme-info">
+                            <h3 class="theme-title">Office Fantasy</h3>
+                            <p class="theme-desc">Boss and secretary roleplay scenarios</p>
+                            <div class="theme-stats">
+                                <span><i class="fas fa-video"></i> 54 shows</span>
+                                <span><i class="fas fa-users"></i> 1.5k followers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Theme -->
+        <section class="section featured-themes">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Featured Theme of the Week
+                    </h2>
+                </div>
+
+                <div class="featured-slider">
+                    <div class="featured-slide">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+                            alt="Featured Theme">
+                        <div class="featured-overlay">
+                            <h2 class="featured-title">Halloween Special: Vampire Queen</h2>
+                            <p class="featured-desc">
+                                Join our exclusive Halloween event featuring the Vampire Queen.
+                                Special performances, group rituals, and private sessions available.
+                                Limited time offer with premium rewards!
+                            </p>
+                            <div style="display: flex; gap: 15px;">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-calendar-check"></i> Schedule Session
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-info-circle"></i> Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="section upcoming-events">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Upcoming Theme Events
+                    </h2>
+                </div>
+
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">Nov 15, 2024 - 8:00 PM EST</div>
+                        <h3 class="event-title">Mistress Monday: BDSM 101</h3>
+                        <p>Learn the basics of BDSM with professional dominatrix. Interactive Q&A and demonstrations.
+                        </p>
+                        <div class="event-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting in 2 days</span>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">Nov 18, 2024 - 9:00 PM EST</div>
+                        <h3 class="event-title">Cosplay Carnival</h3>
+                        <p>Multi-model cosplay event featuring popular anime and game characters.</p>
+                        <div class="event-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting in 5 days</span>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">Nov 22, 2024 - 7:30 PM EST</div>
+                        <h3 class="event-title">Thanksgiving Special</h3>
+                        <p>Family roleplay with holiday themes. Limited private sessions available.</p>
+                        <div class="event-time">
+                            <i class="fas fa-clock"></i>
+                            <span>Starting in 9 days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content from index.html -->
+    </footer>
+</body>
+
+</html>

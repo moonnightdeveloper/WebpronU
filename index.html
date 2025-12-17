@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebpronU - Premium Adult Entertainment</title>
+    <title>WebPronU</title>
 
     <!-- Meta tags -->
     <meta name="description"
@@ -24,73 +24,21 @@
     <meta property="og:site_name" content="WebpronU">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="image/wpurblogo1.png">
+    <link rel="apple-touch-icon" href="image/wpurblogo1.png">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Preload critical assets -->
-    <!-- <link rel="preload" href="js/script.js" as="script">
-    <link rel="preload" href="https://unpkg.com/swiper@8/swiper-bundle.min.js" as="script"> -->
+    <!-- Inline critical CSS for faster loading -->
+
 </head>
 
 <body>
 
-    <!-- Age Verification Modal -->
-    <!-- <div id="age-verification" class="age-verification-modal">
-        <div class="verification-content">
-            <div class="verification-header">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h2>Age Verification Required</h2>
-            </div>
-            <div class="verification-body">
-                <p>This website contains explicit adult content intended for individuals 18 years of age or older.</p>
-                <p>By entering this site, you confirm that:</p>
-                <ul>
-                    <li>You are at least 18 years old</li>
-                    <li>You are not offended by adult content</li>
-                    <li>It is legal to view adult content in your location</li>
-                </ul>
-                <div class="verification-actions">
-                    <button id="enter-site" class="btn btn-primary">
-                        <i class="fas fa-check-circle"></i> I AM 18 OR OLDER
-                    </button>
-                    <button id="exit-site" class="btn btn-secondary">
-                        <i class="fas fa-times-circle"></i> EXIT SITE
-                    </button>
-                </div>
-                <div class="verification-warning">
-                    <i class="fas fa-shield-alt"></i>
-                    <small>Your privacy and security are important to us. We use SSL encryption and never share your
-                        data.</small>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Loading Screen -->
-    <!-- <div class="loader-container">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <img src="image/logo.png" alt="WebpronU" class="pulse">
-            </div>
-            <div class="loader-text">
-                <span>Loading Premium Content</span>
-                <div class="loader-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-            </div>
-            <div class="loader-progress">
-                <div class="progress-bar"></div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Header Section -->
     <header class="header" id="header">
@@ -100,6 +48,7 @@
                     <div class="site-announcement">
                         <i class="fas fa-fire"></i>
                         <span>Limited Time Offer: Get 50% Off Premium Subscription!</span>
+                        <span class="announcement-timer" id="announcement-timer">48:00:00</span>
                     </div>
                     <div class="header-top-links">
                         <a href="support.html"><i class="fas fa-headset"></i> Support</a>
@@ -108,6 +57,7 @@
                             <option value="en">English</option>
                             <option value="es">Español</option>
                             <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
                         </select>
                     </div>
                 </div>
@@ -120,8 +70,8 @@
                     <!-- Logo -->
                     <div class="logo-container">
                         <a href="index.html" class="logo">
-                            <img src="image/logo.png" alt="WebpronU" class="logo-img">
-                            <span class="logo-text">Webpron<span class="logo-highlight">U</span></span>
+                            <img src="image/wpurbtx1.png" alt="WebpronU" class="logo-img" loading="lazy">
+                            <span class="logo-text"><span class="logo-highlight"></span></span>
                         </a>
                     </div>
 
@@ -136,22 +86,10 @@
                                 </button>
                                 <div class="search-suggestions" id="search-suggestions"></div>
                             </div>
-                            <div class="search-filters">
-                                <select name="category" class="filter-select">
-                                    <option value="">All Categories</option>
-                                    <option value="videos">Videos</option>
-                                    <option value="photos">Photos</option>
-                                    <option value="live">Live Shows</option>
-                                </select>
-                                <select name="duration" class="filter-select">
-                                    <option value="">Any Duration</option>
-                                    <option value="short">Under 10 min</option>
-                                    <option value="medium">10-30 min</option>
-                                    <option value="long">Over 30 min</option>
-                                </select>
-                            </div>
+
                         </form>
                     </div>
+
 
                     <!-- User Actions -->
                     <div class="user-actions">
@@ -174,7 +112,20 @@
                                             <small>5 minutes ago</small>
                                         </div>
                                     </div>
-                                    <!-- More notifications -->
+                                    <div class="notification-item">
+                                        <i class="fas fa-heart"></i>
+                                        <div class="notification-text">
+                                            <strong>New followers</strong>
+                                            <small>2 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <i class="fas fa-gift"></i>
+                                        <div class="notification-text">
+                                            <strong>Special offer available</strong>
+                                            <small>1 day ago</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -189,7 +140,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="search-filters">
+                <button class="button-tabs">indian</button>
+                <button class="button-tabs">4K Video</button>
+                <button class="button-tabs">Live Shows</button>
+                <button class="button-tabs">18 year Old</button>
+                <button class="button-tabs">American</button>
+                <button class="button-tabs">British</button>
+                <button class="button-tabs">Colombian</button>
+                <button class="button-tabs">Desi</button>
+                <button class="button-tabs">French</button>
+                <button class="button-tabs">German</button>
+                <button class="button-tabs">Japanese</button>
+                <button class="button-tabs">Pakistan</button>
+                <button class="button-tabs">Russian</button>
+
             </div>
+            </div>
+            
         </div>
 
         <!-- Navigation -->
@@ -219,6 +187,7 @@
                             <a href="category-4k.html">4K Ultra HD</a>
                             <a href="category-live.html">Live Shows</a>
                             <a href="category-photos.html">Photo Galleries</a>
+                            <a href="category-premium.html">Premium Exclusive</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -283,20 +252,20 @@
                             <span class="title-line highlight">Entertainment</span>
                         </h1>
                         <p class="hero-subtitle">
-                            Exclusive content • Professional models • HD Quality
+                            Exclusive content • Professional models • HD Quality • Live Shows
                         </p>
                         <div class="hero-features">
                             <div class="feature">
                                 <i class="fas fa-play-circle"></i>
-                                <span>10,000+ Videos</span>
+                                <span>15,000+ Videos</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-images"></i>
-                                <span>50,000+ Photos</span>
+                                <span>75,000+ Photos</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-star"></i>
-                                <span>500+ Models</span>
+                                <span>800+ Models</span>
                             </div>
                             <div class="feature">
                                 <i class="fas fa-download"></i>
@@ -313,20 +282,25 @@
                                 Browse Content
                             </a>
                         </div>
+                        <div class="hero-security">
+                            <p><i class="fas fa-shield-alt"></i> 100% Secure • Private Browsing • SSL Encrypted</p>
+                        </div>
                     </div>
                     <div class="hero-slider">
                         <div class="swiper heroSwiper">
                             <div class="swiper-wrapper">
-                                <!-- Slides will be populated by JS -->
+                                <!-- Slides populated by JS -->
                             </div>
                             <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Models Section -->
+        <!-- Featured Models Autoslider -->
         <section class="section featured-section" id="featured">
             <div class="container">
                 <div class="section-header">
@@ -334,14 +308,28 @@
                         <i class="fas fa-fire"></i>
                         Featured Models
                     </h2>
-                    <p class="section-subtitle">Most popular models this week</p>
-                    <a href="all-models.html" class="view-all">
-                        View All <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="section-controls">
+
+                        <a href="all-models.html" class="view-all">
+                            View All <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
                 </div>
 
+                <!-- Auto-sliding Models Gallery -->
+                <div class="slider">
+                    <div class="slide-track">
+                        <img src="./image/03-r.png" alt="">
+                        <img src="./image/03-r.png" alt="">
+                        <img src="./image/03-r.png" alt="">
+                        <img src="./image/03-r.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Featured Models Grid (Detailed View) -->
                 <div class="models-grid">
-                    <!-- Model cards will be populated by JS -->
+                    <!-- <img src="./image/02.png" alt=""> -->
                 </div>
             </div>
         </section>
@@ -354,7 +342,7 @@
                         <i class="fas fa-th-large"></i>
                         Browse Categories
                     </h2>
-                    <p class="section-subtitle">Find content by category</p>
+                    <p class="section-subtitle">Find your favorite content by category</p>
                 </div>
 
                 <div class="categories-grid">
@@ -364,15 +352,54 @@
                         </div>
                         <h3>HD Videos</h3>
                         <p>Full HD quality content</p>
-                        <span class="category-count">1,200+</span>
+                        <span class="category-count">2,500+</span>
                     </a>
-                    <!-- More categories -->
+                    <a href="category-4k.html" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <h3>4K Ultra HD</h3>
+                        <p>Ultra high definition</p>
+                        <span class="category-count">850+</span>
+                    </a>
+                    <a href="category-live.html" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3>Live Shows</h3>
+                        <p>Real-time streaming</p>
+                        <span class="category-count">Live Now</span>
+                    </a>
+                    <a href="category-photos.html" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Photo Galleries</h3>
+                        <p>High-quality photos</p>
+                        <span class="category-count">15,000+</span>
+                    </a>
+                    <a href="category-premium.html" class="category-card premium">
+                        <div class="category-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Premium Exclusive</h3>
+                        <p>VIP only content</p>
+                        <span class="category-count">500+</span>
+                    </a>
+                    <a href="category-vr.html" class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h3>VR Experience</h3>
+                        <p>Virtual reality content</p>
+                        <span class="category-count">200+</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- New Arrivals Section -->
-        <section class="section new-arrivals" id="new">
+        <!-- New Arrivals Section with Autoplay -->
+        <!-- <section class="section new-arrivals" id="new">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">
@@ -380,24 +407,15 @@
                         New Arrivals
                     </h2>
                     <div class="section-tabs">
-                        <button class="tab-btn active" data-filter="all">All</button>
-                        <button class="tab-btn" data-filter="videos">Videos</button>
-                        <button class="tab-btn" data-filter="photos">Photos</button>
-                        <button class="tab-btn" data-filter="live">Live</button>
+                        <button class="button-tabs active" data-filter="all">All</button>
+                        <button class="button-tabs" data-filter="videos">Videos</button>
+                        <button class="button-tabs" data-filter="photos">Photos</button>
+                        <button class="button-tabs" data-filter="live">Live</button>
+                        <button class="button-tabs" data-filter="premium">Premium</button>
                     </div>
-                </div>
-
-                <div class="arrivals-slider-container">
-                    <div class="swiper arrivalsSwiper">
-                        <div class="swiper-wrapper">
-                            <!-- Slides will be populated by JS -->
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
+                </div>                
             </div>
-        </section>
+        </section> -->
 
         <!-- Premium Offer Section -->
         <section class="section premium-offer" id="premium">
@@ -410,10 +428,12 @@
                         <p>Unlock all content for 30 days. No restrictions, no ads, full HD quality.</p>
 
                         <div class="offer-features">
-                            <p><i class="fas fa-check"></i> Unlimited Access</p>
-                            <p><i class="fas fa-check"></i> HD & 4K Quality</p>
-                            <p><i class="fas fa-check"></i> No Ads</p>
-                            <p><i class="fas fa-check"></i> Download Option</p>
+                            <p><i class="fas fa-check"></i> Unlimited Access to All Content</p>
+                            <p><i class="fas fa-check"></i> HD & 4K Quality Streaming</p>
+                            <p><i class="fas fa-check"></i> Zero Ads Experience</p>
+                            <p><i class="fas fa-check"></i> Download for Offline Viewing</p>
+                            <p><i class="fas fa-check"></i> Priority Customer Support</p>
+                            <p><i class="fas fa-check"></i> Exclusive Models & Content</p>
                         </div>
 
                         <div class="countdown-timer">
@@ -436,12 +456,23 @@
 
                         <a href="premium-offer.html" class="btn btn-premium btn-lg">
                             <i class="fas fa-bolt"></i>
-                            Get Premium Now
+                            Get Premium Now - Only $9.99/month
                         </a>
+                        <p class="offer-note"><small>7-day free trial included. Cancel anytime.</small></p>
                     </div>
 
                     <div class="offer-image">
-                        <img src="image/premium-offer.png" alt="Premium Offer" loading="lazy">
+                        <img src="./image/03-r.png" alt="Premium Offer" loading="lazy">
+                        <!-- <div class="offer-stats">
+                            <div class="stat">
+                                <h4>2,500+</h4>
+                                <p>Premium Users</p>
+                            </div>
+                            <div class="stat">
+                                <h4>4.8/5</h4>
+                                <p>User Rating</p>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -453,17 +484,17 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <i class="fas fa-video"></i>
-                        <h3>10,000+</h3>
+                        <h3>15,000+</h3>
                         <p>HD Videos</p>
                     </div>
                     <div class="stat-card">
                         <i class="fas fa-user-friends"></i>
-                        <h3>500+</h3>
+                        <h3>800+</h3>
                         <p>Professional Models</p>
                     </div>
                     <div class="stat-card">
                         <i class="fas fa-globe"></i>
-                        <h3>50+</h3>
+                        <h3>80+</h3>
                         <p>Countries Served</p>
                     </div>
                     <div class="stat-card">
@@ -471,6 +502,35 @@
                         <h3>99.8%</h3>
                         <p>User Satisfaction</p>
                     </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7</h3>
+                        <p>Live Support</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100%</h3>
+                        <p>Secure & Private</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Now Section -->
+        <section class="section live-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-broadcast-tower"></i>
+                        Live Now
+                    </h2>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span>15 Models Live</span>
+                    </div>
+                </div>
+                <div class="live-grid">
+                    <!-- Live streams populated by JS -->
                 </div>
             </div>
         </section>
@@ -483,16 +543,19 @@
                 <div class="footer-grid">
                     <div class="footer-col">
                         <div class="footer-logo">
-                            <img src="image/logo.png" alt="WebpronU">
-                            <span>WebpronU</span>
+                            <img src="image/wpurb1.png" alt="WebpronU" loading="lazy">
+                            <span></span>
                         </div>
                         <p class="footer-description">
-                            Premium adult entertainment platform featuring exclusive content from professional models.
+                            Premium adult entertainment platform featuring exclusive content from professional models
+                            worldwide.
+                            100% secure and private.
                         </p>
                         <div class="social-links">
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
                         </div>
                     </div>
 
@@ -504,6 +567,7 @@
                             <li><a href="categories.html">Categories</a></li>
                             <li><a href="new.html">New Arrivals</a></li>
                             <li><a href="trending.html">Trending</a></li>
+                            <li><a href="live.html">Live Shows</a></li>
                         </ul>
                     </div>
 
@@ -515,6 +579,7 @@
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="report.html">Report Content</a></li>
                             <li><a href="age-verification.html">Age Verification</a></li>
+                            <li><a href="billing.html">Billing Support</a></li>
                         </ul>
                     </div>
 
@@ -525,12 +590,14 @@
                             <li><a href="privacy.html">Privacy Policy</a></li>
                             <li><a href="cookies.html">Cookie Policy</a></li>
                             <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="dmca.html">DMCA</a></li>
+                            <li><a href="2257.html">18 U.S.C. 2257</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-col">
                         <h4>Newsletter</h4>
-                        <p>Subscribe for updates and offers</p>
+                        <p>Subscribe for updates, new content, and special offers</p>
                         <form class="newsletter-form">
                             <input type="email" placeholder="Your email" required>
                             <button type="submit">
@@ -538,10 +605,12 @@
                             </button>
                         </form>
                         <div class="payment-methods">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                            <i class="fab fa-bitcoin"></i>
+                            <i class="fab fa-cc-visa" title="Visa"></i>
+                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                            <i class="fab fa-cc-paypal" title="PayPal"></i>
+                            <i class="fab fa-cc-amex" title="American Express"></i>
+                            <i class="fab fa-bitcoin" title="Bitcoin"></i>
+                            <i class="fab fa-ethereum" title="Ethereum"></i>
                         </div>
                     </div>
                 </div>
@@ -551,10 +620,15 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p>&copy; 2024 WebpronU. All rights reserved. Adults only (18+)</p>
+                    <p>&copy; 2025 WebpronU. All rights reserved. Adults only (18+)</p>
                     <div class="footer-warning">
                         <i class="fas fa-exclamation-triangle"></i>
                         <span>This site contains explicit adult content. All models are 18+.</span>
+                    </div>
+                    <div class="footer-compliance">
+                        <span class="compliance-badge">RTA Verified</span>
+                        <span class="compliance-badge">SSL Secured</span>
+                        <span class="compliance-badge">DMCA Protected</span>
                     </div>
                 </div>
             </div>
@@ -593,28 +667,409 @@
                         <button type="button" class="btn btn-google">
                             <i class="fab fa-google"></i> Google
                         </button>
+                        <button type="button" class="btn btn-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </button>
                     </div>
                     <p class="auth-switch">
                         Don't have an account? <a href="register.html">Sign up</a>
+                    </p>
+                    <p class="age-notice">
+                        <small>By signing in, you confirm you are 18+ years old</small>
                     </p>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content quick-view-content">
+            <button class="modal-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quick-view-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/script.js"></script>
     <script src="js/components.js"></script>
 
-    <!-- Initialize -->
+    <!-- Enhanced autoslider functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Initialize the application
-            App.init();
+            // Age verification
+            const ageModal = document.getElementById('age-verification');
+            const enterBtn = document.getElementById('enter-site');
+            const leaveBtn = document.getElementById('leave-site');
+
+            // Check if age is already verified
+            if (!localStorage.getItem('ageVerified')) {
+                ageModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            enterBtn.addEventListener('click', function () {
+                localStorage.setItem('ageVerified', 'true');
+                ageModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                App.init();
+            });
+
+            leaveBtn.addEventListener('click', function () {
+                window.location.href = 'https://www.google.com';
+            });
+
+            // If age is verified, initialize the app
+            if (localStorage.getItem('ageVerified')) {
+                App.init();
+            }
         });
+
+        // Enhanced App object
+        window.App = {
+            init: function () {
+                this.initSliders();
+                this.initAutosliders();
+                this.initNavigation();
+                this.initModals();
+                this.initCountdowns();
+                this.loadContent();
+            },
+
+            initSliders: function () {
+                // Hero slider
+                const heroSwiper = new Swiper('.heroSwiper', {
+                    loop: true,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    effect: 'fade',
+                    speed: 800,
+                });
+
+                // New arrivals slider
+                const arrivalsSwiper = new Swiper('.arrivalsSwiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    breakpoints: {
+                        640: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                        1280: { slidesPerView: 4 },
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                });
+
+                // Autoplay toggle for arrivals
+                const arrivalsAutoplay = document.getElementById('arrivals-autoplay');
+                arrivalsAutoplay.addEventListener('click', function () {
+                    if (arrivalsSwiper.autoplay.running) {
+                        arrivalsSwiper.autoplay.stop();
+                        this.innerHTML = '<i class="fas fa-play"></i> Play Autoplay';
+                    } else {
+                        arrivalsSwiper.autoplay.start();
+                        this.innerHTML = '<i class="fas fa-pause"></i> Pause Autoplay';
+                    }
+                });
+            },
+
+            initAutosliders: function () {
+                // Featured models autoslider
+                const slideTrack = document.querySelector('.slide-track');
+                const pauseBtn = document.getElementById('pause-slider');
+                const playBtn = document.getElementById('play-slider');
+                const speedSelect = document.getElementById('slider-speed');
+
+                // Create dynamic slides
+                const models = [
+                    { name: "Luna", category: "Premium", image: "image/model1.jpg" },
+                    { name: "Sophia", category: "HD", image: "image/model2.jpg" },
+                    { name: "Mia", category: "Live", image: "image/model3.jpg" },
+                    { name: "Ava", category: "4K", image: "image/model4.jpg" },
+                    { name: "Isabella", category: "Premium", image: "image/model5.jpg" },
+                    { name: "Emma", category: "HD", image: "image/model6.jpg" },
+                    { name: "Olivia", category: "Live", image: "image/model7.jpg" },
+                    { name: "Charlotte", category: "4K", image: "image/model8.jpg" },
+                    { name: "Amelia", category: "Premium", image: "image/model9.jpg" },
+                ];
+
+                // Clear existing slides and create new ones
+                slideTrack.innerHTML = '';
+
+                // Create slides (duplicate for seamless loop)
+                models.forEach(model => {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    slide.innerHTML = `
+                        <div class="model-card">
+                            <img src="${model.image}" alt="${model.name}" loading="lazy">
+                            <div class="model-info">
+                                <h4>${model.name}</h4>
+                                <span class="model-category">${model.category}</span>
+                            </div>
+                        </div>
+                    `;
+                    slideTrack.appendChild(slide.cloneNode(true));
+                });
+
+                // Duplicate slides for seamless loop
+                models.forEach(model => {
+                    const slide = document.createElement('div');
+                    slide.className = 'slide';
+                    slide.innerHTML = `
+                        <div class="model-card">
+                            <img src="${model.image}" alt="${model.name}" loading="lazy">
+                            <div class="model-info">
+                                <h4>${model.name}</h4>
+                                <span class="model-category">${model.category}</span>
+                            </div>
+                        </div>
+                    `;
+                    slideTrack.appendChild(slide.cloneNode(true));
+                });
+
+                // Slider controls
+                let animation = slideTrack.style.animation;
+                let isPlaying = true;
+
+                pauseBtn.addEventListener('click', function () {
+                    slideTrack.style.animationPlayState = 'paused';
+                    isPlaying = false;
+                });
+
+                playBtn.addEventListener('click', function () {
+                    slideTrack.style.animationPlayState = 'running';
+                    isPlaying = true;
+                });
+
+                speedSelect.addEventListener('change', function () {
+                    const speed = this.value;
+                    let duration;
+                    switch (speed) {
+                        case 'slow': duration = '60s'; break;
+                        case 'normal': duration = '40s'; break;
+                        case 'fast': duration = '20s'; break;
+                    }
+                    slideTrack.style.animationDuration = duration;
+                });
+
+                // Pause on hover
+                const slider = document.querySelector('.slider');
+                slider.addEventListener('mouseenter', function () {
+                    if (isPlaying) {
+                        slideTrack.style.animationPlayState = 'paused';
+                    }
+                });
+
+                slider.addEventListener('mouseleave', function () {
+                    if (isPlaying) {
+                        slideTrack.style.animationPlayState = 'running';
+                    }
+                });
+            },
+
+            initNavigation: function () {
+                // Mobile menu toggle
+                const menuToggle = document.getElementById('menu-toggle');
+                const mobileNav = document.querySelector('.mobile-navigation');
+
+                menuToggle.addEventListener('click', function () {
+                    mobileNav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            },
+
+            initModals: function () {
+                // Login modal
+                const loginBtn = document.getElementById('login-btn');
+                const loginModal = document.getElementById('login-modal');
+                const closeModal = loginModal.querySelector('.modal-close');
+
+                loginBtn.addEventListener('click', function () {
+                    loginModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeModal.addEventListener('click', function () {
+                    loginModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+
+                // Close modal on outside click
+                loginModal.addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            },
+
+            initCountdowns: function () {
+                // Announcement countdown
+                function updateAnnouncementTimer() {
+                    const timerElement = document.getElementById('announcement-timer');
+                    let hours = 48;
+                    let minutes = 0;
+                    let seconds = 0;
+
+                    setInterval(function () {
+                        seconds--;
+                        if (seconds < 0) {
+                            seconds = 59;
+                            minutes--;
+                        }
+                        if (minutes < 0) {
+                            minutes = 59;
+                            hours--;
+                        }
+                        if (hours < 0) {
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                        }
+
+                        timerElement.textContent =
+                            `${hours.toString().padStart(2, '0')}:` +
+                            `${minutes.toString().padStart(2, '0')}:` +
+                            `${seconds.toString().padStart(2, '0')}`;
+                    }, 1000);
+                }
+
+                updateAnnouncementTimer();
+
+                // Premium offer countdown
+                function updateOfferTimer() {
+                    const hoursElement = document.getElementById('offer-hours');
+                    const minutesElement = document.getElementById('offer-minutes');
+                    const secondsElement = document.getElementById('offer-seconds');
+
+                    let hours = 48;
+                    let minutes = 0;
+                    let seconds = 0;
+
+                    setInterval(function () {
+                        seconds--;
+                        if (seconds < 0) {
+                            seconds = 59;
+                            minutes--;
+                        }
+                        if (minutes < 0) {
+                            minutes = 59;
+                            hours--;
+                        }
+                        if (hours < 0) {
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                        }
+
+                        hoursElement.textContent = hours.toString().padStart(2, '0');
+                        minutesElement.textContent = minutes.toString().padStart(2, '0');
+                        secondsElement.textContent = seconds.toString().padStart(2, '0');
+                    }, 1000);
+                }
+
+                updateOfferTimer();
+            },
+
+            loadContent: function () {
+                // Load models grid
+                const modelsGrid = document.querySelector('.models-grid');
+                if (modelsGrid) {
+                    // This would typically come from an API
+                    const models = [
+                        { name: "Premium Model", category: "Premium", rating: "4.9", content: "200+", image: "image/model1.jpg" },
+                        { name: "HD Specialist", category: "HD", rating: "4.8", content: "150+", image: "image/model2.jpg" },
+                        { name: "Live Star", category: "Live", rating: "4.7", content: "100+", image: "image/model3.jpg" },
+                        { name: "4K Queen", category: "4K", rating: "5.0", content: "300+", image: "image/model4.jpg" },
+                    ];
+
+                    modelsGrid.innerHTML = models.map(model => `
+                        <div class="model-card-detailed">
+                            <div class="model-image">
+                                <img src="${model.image}" alt="${model.name}" loading="lazy">
+                                <span class="model-badge">${model.category}</span>
+                            </div>
+                            <div class="model-details">
+                                <h3>${model.name}</h3>
+                                <div class="model-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>${model.rating}</span>
+                                </div>
+                                <p>${model.content} pieces of content</p>
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+                // Load hero slider
+                const heroWrapper = document.querySelector('.heroSwiper .swiper-wrapper');
+                if (heroWrapper) {
+                    const heroSlides = [
+                        { title: "Premium Collection", subtitle: "Exclusive content updated daily", image: "image/hero1.jpg" },
+                        { title: "Live Shows", subtitle: "Real-time streaming 24/7", image: "image/hero2.jpg" },
+                        { title: "HD Quality", subtitle: "Crystal clear viewing experience", image: "image/hero3.jpg" },
+                    ];
+
+                    heroWrapper.innerHTML = heroSlides.map(slide => `
+                        <div class="swiper-slide">
+                            <div class="hero-slide">
+                                <img src="${slide.image}" alt="${slide.title}" loading="lazy">
+                                <div class="slide-content">
+                                    <h2>${slide.title}</h2>
+                                    <p>${slide.subtitle}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+        };
     </script>
 </body>
 

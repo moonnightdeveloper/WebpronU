@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models | WebpronU - Premium Adult Entertainment</title>
+
+    <!-- Meta tags -->
+    <meta name="description" content="Browse our exclusive collection of professional adult entertainment models at WebpronU.">
+    <meta name="keywords" content="adult models, premium models, exclusive performers, professional entertainers">
+    <meta name="rating" content="adult">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="age-verification" content="18">
+    <meta name="author" content="WebpronU">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Premium Models | WebpronU">
+    <meta property="og:description" content="Exclusive collection of professional adult entertainment models">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="WebpronU">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Additional styles for models page -->
+    <style>
+        /* Models Page Specific Styles */
+        .models-page-header {
+            padding: var(--space-2xl) 0 var(--space-xl);
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.7)),
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .models-page-header h1 {
+            font-size: 4.8rem;
+            margin-bottom: var(--space-sm);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .models-page-header p {
+            font-size: 1.8rem;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .models-filters-section {
+            padding: var(--space-xl) 0;
+            background: var(--dark-light);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .filters-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filters-left, .filters-right {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .filter-group label {
+            font-size: 1.4rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .filter-select {
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            color: var(--light);
+            font-size: 1.4rem;
+            min-width: 180px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255,51,102,0.1);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--gray);
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--gradient-primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .search-filter {
+            position: relative;
+            min-width: 300px;
+        }
+
+        .search-filter input {
+            width: 100%;
+            padding: var(--space-sm) var(--space-lg);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            color: var(--light);
+            font-size: 1.4rem;
+            padding-left: 45px;
+        }
+
+        .search-filter i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        .models-stats {
+            display: flex;
+            gap: var(--space-xl);
+            justify-content: center;
+            margin-top: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            font-size: 1.4rem;
+            color: var(--gray);
+        }
+
+        /* Models Grid Enhanced */
+        .models-section {
+            padding: var(--space-2xl) 0;
+        }
+
+        .models-grid-container {
+            position: relative;
+        }
+
+        .view-options {
+            display: flex;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xl);
+        }
+
+        .view-option-btn {
+            padding: var(--space-sm) var(--space-lg);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            color: var(--gray);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .view-option-btn:hover,
+        .view-option-btn.active {
+            background: var(--gradient-primary);
+            color: var(--light);
+            border-color: var(--primary);
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .model-card-large {
+            background: var(--dark-light);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .model-card-large:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .model-image-container {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .model-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .model-card-large:hover .model-image {
+            transform: scale(1.1);
+        }
+
+        .model-badges {
+            position: absolute;
+            top: var(--space-md);
+            left: var(--space-md);
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+        }
+
+        .model-badge {
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--dark);
+        }
+
+        .badge-new {
+            background: var(--gradient-primary);
+            color: var(--light);
+        }
+
+        .badge-featured {
+            background: var(--gradient-accent);
+            color: var(--light);
+        }
+
+        .badge-live {
+            background: var(--danger);
+            color: var(--light);
+        }
+
+        .model-actions {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all var(--transition-base);
+        }
+
+        .model-card-large:hover .model-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .action-btn-small {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.7);
+            border: none;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .action-btn-small:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .model-info {
+            padding: var(--space-lg);
+        }
+
+        .model-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-sm);
+        }
+
+        .model-name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .model-username {
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .model-age {
+            font-size: 1.4rem;
+            color: var(--gray);
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+        }
+
+        .model-stats {
+            display: flex;
+            gap: var(--space-lg);
+            margin: var(--space-md) 0;
+            padding: var(--space-md) 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .model-stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .model-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 4px;
+        }
+
+        .model-stat-label {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+
+        .model-tags {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-md);
+        }
+
+        .model-tag {
+            padding: 4px 12px;
+            background: rgba(255,51,102,0.1);
+            border: 1px solid rgba(255,51,102,0.2);
+            border-radius: var(--radius-full);
+            color: var(--primary-light);
+            font-size: 1.2rem;
+        }
+
+        .model-bio {
+            color: var(--gray-light);
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .model-cta {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .btn-model {
+            flex: 1;
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+        }
+
+        .btn-model-profile {
+            background: var(--gradient-primary);
+            color: var(--light);
+        }
+
+        .btn-model-subscribe {
+            background: rgba(255,255,255,0.05);
+            color: var(--light);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-model-subscribe:hover {
+            background: rgba(255,51,102,0.1);
+            border-color: var(--primary);
+        }
+
+        /* Pagination */
+        .models-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-xl);
+            padding: var(--space-lg) 0;
+        }
+
+        .pagination-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .pagination-btn:hover:not(.disabled) {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .pagination-numbers {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .pagination-number {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .pagination-number:hover,
+        .pagination-number.active {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+        }
+
+        .pagination-ellipsis {
+            color: var(--gray);
+            padding: 0 var(--space-sm);
+        }
+
+        /* Featured Models Slider */
+        .featured-models-section {
+            padding: var(--space-xl) 0;
+            background: var(--dark-light);
+            border-radius: var(--radius-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .featured-models-slider {
+            padding: var(--space-lg);
+        }
+
+        .swiper-slide-featured {
+            background: var(--dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .models-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .models-page-header h1 {
+                font-size: 3.6rem;
+            }
+            
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filters-left, .filters-right {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-filter {
+                min-width: 100%;
+            }
+            
+            .model-cta {
+                flex-direction: column;
+            }
+            
+            .model-image-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .model-stats {
+                gap: var(--space-sm);
+            }
+            
+            .model-stat-value {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Age Verification Modal -->
+    <div class="age-verification-modal" id="ageVerification">
+        <div class="verification-content">
+            <div class="verification-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Age Verification Required</h2>
+            </div>
+            <div class="verification-body">
+                <p>This content is intended for mature audiences.</p>
+                <p>You must be at least 18 years old to access this page.</p>
+                <div class="verification-actions">
+                    <button class="btn btn-primary" id="confirmAge">
+                        <i class="fas fa-check"></i> I'm 18 or Older
+                    </button>
+                    <button class="btn btn-outline" id="denyAge">
+                        <i class="fas fa-times"></i> I'm Under 18
+                    </button>
+                </div>
+                <div class="verification-warning">
+                    <i class="fas fa-shield-alt"></i>
+                    <small>By confirming your age, you agree to our Terms of Service and acknowledge that you are accessing adult-oriented content at your own discretion.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="logo">
+                    <i class="fas fa-user-friends"></i>
+                    <span>MODELS<span class="logo-highlight">HUB</span></span>
+                </div>
+            </div>
+            <div class="loader-text">
+                <span>Loading Models</span>
+                <div class="loader-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header (Same as index.html) -->
+    <header class="header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="site-announcement">
+                        <i class="fas fa-fire"></i>
+                        <span>New Models Added Daily!</span>
+                    </div>
+                    <div class="header-top-links">
+                        <a href="support.html"><i class="fas fa-headset"></i> Support</a>
+                        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+                        <select id="language-selector">
+                            <option value="en">English</option>
+                            <option value="es">Espanol</option>
+                            <option value="fr">Francais</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="index.html" class="logo">
+                            <img src="image/wpurbtx1.png" alt="WebpronU" class="logo-img" loading="lazy">
+                            <span class="logo-text"><span class="logo-highlight"></span></span>
+                        </a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <form action="search.html" class="search-form" method="get" id="search-form">
+                            <div class="search-input-group">
+                                <input type="search" name="q" placeholder="Search models, categories, or tags..."
+                                    id="search-box" autocomplete="off" aria-label="Search content">
+                                <button type="submit" class="search-btn" aria-label="Search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                           
+                        </form>
+                    </div>
+
+                    <!-- User Actions -->
+                    <div class="user-actions">
+                        <div class="action-icons">
+                            <button id="mobile-search-btn" class="action-btn mobile-only" aria-label="Search">
+                                <i class="fas fa-search"></i>
+                            </button>
+
+                            <div class="notification-dropdown">
+                                <button class="action-btn notification-btn" aria-label="Notifications">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="notification-count">2</span>
+                                </button>
+                            </div>
+
+                            <button id="login-btn" class="action-btn login-btn" aria-label="Login">
+                                <i class="fas fa-user"></i>
+                                <span class="btn-text">Login</span>
+                            </button>
+
+                            <button id="menu-toggle" class="action-btn menu-toggle" aria-label="Menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-navigation">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="models.html" class="nav-link">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Models</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#categories" class="nav-link">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="category-hd.html">HD Videos</a>
+                            <a href="category-4k.html">4K Ultra HD</a>
+                            <a href="category-live.html">Live Shows</a>
+                            <a href="category-photos.html">Photo Galleries</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="new.html" class="nav-link">
+                            <i class="fas fa-newspaper"></i>
+                            <span>New Arrivals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="trending.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Trending</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="premium.html" class="nav-link premium">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-navigation">
+        <div class="mobile-nav-content">
+            <a href="index.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="models.html" class="mobile-nav-item active">
+                <i class="fas fa-user-friends"></i>
+                <span>Models</span>
+            </a>
+            <a href="categories.html" class="mobile-nav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="new.html" class="mobile-nav-item">
+                <i class="fas fa-newspaper"></i>
+                <span>New</span>
+            </a>
+            <a href="profile.html" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Models Page Header -->
+        <section class="models-page-header">
+            <div class="container">
+                <h1>Premium Models</h1>
+                <p>Discover our exclusive collection of professional adult entertainment models. Filter by category, popularity, or find your new favorite performer.</p>
+                
+                <div class="models-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Active Models</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1.2M</div>
+                        <div class="stat-label">Total Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Live Shows</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="models-filters-section">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="filters-left">
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select class="filter-select" id="sort-select">
+                                <option value="popularity">Most Popular</option>
+                                <option value="newest">Newest First</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="alphabetical">Alphabetical</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Category</label>
+                            <select class="filter-select" id="category-select">
+                                <option value="all">All Categories</option>
+                                <option value="premium">Premium Only</option>
+                                <option value="live">Live Models</option>
+                                <option value="hd">HD Content</option>
+                                <option value="4k">4K Content</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Age Range</label>
+                            <select class="filter-select" id="age-select">
+                                <option value="all">All Ages</option>
+                                <option value="18-25">18-25</option>
+                                <option value="26-30">26-30</option>
+                                <option value="31-35">31-35</option>
+                                <option value="36+">36+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="filters-right">
+                        <div class="search-filter">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search models by name or tag..." id="model-search">
+                        </div>
+                        
+                        <div class="view-options">
+                            <button class="view-option-btn active" data-view="grid">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="view-option-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-tags">
+                    <span class="filter-tag active">All</span>
+                    <span class="filter-tag">Blonde</span>
+                    <span class="filter-tag">Brunette</span>
+                    <span class="filter-tag">Redhead</span>
+                    <span class="filter-tag">Asian</span>
+                    <span class="filter-tag">Latina</span>
+                    <span class="filter-tag">European</span>
+                    <span class="filter-tag">Tattooed</span>
+                    <span class="filter-tag">Amateur</span>
+                    <span class="filter-tag">Professional</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models Grid Section -->
+        <section class="models-section">
+            <div class="container">
+                <div class="models-grid-container">
+                    <div class="models-grid" id="modelsGrid">
+                        <!-- Model Card 1 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Sophia Rose" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-new">New</span>
+                                    <span class="model-badge badge-live">
+                                        <i class="fas fa-circle"></i> Live Now
+                                    </span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Sophia Rose</h3>
+                                        <div class="model-username">@sophiaroseofficial</div>
+                                    </div>
+                                    <div class="model-age">25</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.9</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">1.2K</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">85K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">Blonde</span>
+                                    <span class="model-tag">Blue Eyes</span>
+                                    <span class="model-tag">Professional</span>
+                                    <span class="model-tag">HD</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    Professional model with 5+ years experience. Specializes in HD and 4K content. Available for custom content and live shows daily.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-sophia.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model Card 2 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Mia Chen" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-featured">Featured</span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Mia Chen</h3>
+                                        <div class="model-username">@miachenasian</div>
+                                    </div>
+                                    <div class="model-age">23</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.8</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">850</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">64K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">Asian</span>
+                                    <span class="model-tag">Brunette</span>
+                                    <span class="model-tag">Cosplay</span>
+                                    <span class="model-tag">4K</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    Cosplay specialist and professional model. Creates themed content and HD videos. Fluent in English and Mandarin.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-mia.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model Card 3 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Isabella Rossi" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-new">New</span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Isabella Rossi</h3>
+                                        <div class="model-username">@isabellarossi</div>
+                                    </div>
+                                    <div class="model-age">28</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.7</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">560</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">42K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">Italian</span>
+                                    <span class="model-tag">Brunette</span>
+                                    <span class="model-tag">Curvy</span>
+                                    <span class="model-tag">HD</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    European model specializing in artistic and sensual content. Available for photo shoots and custom video requests.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-isabella.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model Card 4 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Lena Smith" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-featured">Featured</span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Lena Smith</h3>
+                                        <div class="model-username">@lenasmithmodel</div>
+                                    </div>
+                                    <div class="model-age">26</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.9</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">1.5K</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">92K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">Redhead</span>
+                                    <span class="model-tag">Tattooed</span>
+                                    <span class="model-tag">Alternative</span>
+                                    <span class="model-tag">Live Shows</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    Alternative model with unique style. Specializes in alternative fashion and live streaming. Available for custom content.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-lena.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model Card 5 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1542206395-9feb3edaa68d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Chloe Taylor" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-live">
+                                        <i class="fas fa-circle"></i> Live Now
+                                    </span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Chloe Taylor</h3>
+                                        <div class="model-username">@chloetaylor_official</div>
+                                    </div>
+                                    <div class="model-age">24</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.8</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">980</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">78K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">Blonde</span>
+                                    <span class="model-tag">Blue Eyes</span>
+                                    <span class="model-tag">Fitness</span>
+                                    <span class="model-tag">HD</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    Fitness model and content creator. Specializes in fitness-themed content and outdoor shoots. HD and 4K available.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-chloe.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Model Card 6 -->
+                        <div class="model-card-large">
+                            <div class="model-image-container">
+                                <img src="https://images.unsplash.com/photo-1519742866993-66d3cfef4bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Emma Johnson" 
+                                     class="model-image">
+                                <div class="model-badges">
+                                    <span class="model-badge badge-premium">
+                                        <i class="fas fa-crown"></i> Premium
+                                    </span>
+                                    <span class="model-badge badge-new">New</span>
+                                </div>
+                                <div class="model-actions">
+                                    <button class="action-btn-small" title="Add to favorites">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="View profile">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn-small" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="model-info">
+                                <div class="model-header">
+                                    <div>
+                                        <h3 class="model-name">Emma Johnson</h3>
+                                        <div class="model-username">@emmajohnson_model</div>
+                                    </div>
+                                    <div class="model-age">22</div>
+                                </div>
+                                
+                                <div class="model-stats">
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">4.6</div>
+                                        <div class="model-stat-label">Rating</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">320</div>
+                                        <div class="model-stat-label">Videos</div>
+                                    </div>
+                                    <div class="model-stat">
+                                        <div class="model-stat-value">28K</div>
+                                        <div class="model-stat-label">Followers</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="model-tags">
+                                    <span class="model-tag">American</span>
+                                    <span class="model-tag">Brunette</span>
+                                    <span class="model-tag">Amateur</span>
+                                    <span class="model-tag">Gaming</span>
+                                </div>
+                                
+                                <p class="model-bio">
+                                    Rising star in the adult entertainment industry. Gaming and streaming content creator. Interactive live shows weekly.
+                                </p>
+                                
+                                <div class="model-cta">
+                                    <a href="model-emma.html" class="btn btn-model btn-model-profile">
+                                        <i class="fas fa-user"></i> View Profile
+                                    </a>
+                                    <button class="btn btn-model btn-model-subscribe">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="models-pagination">
+                        <button class="pagination-btn disabled">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="pagination-numbers">
+                            <span class="pagination-number active">1</span>
+                            <span class="pagination-number">2</span>
+                            <span class="pagination-number">3</span>
+                            <span class="pagination-ellipsis">...</span>
+                            <span class="pagination-number">8</span>
+                        </div>
+                        
+                        <button class="pagination-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Banner -->
+        <section class="premium-offer">
+            <div class="container">
+                <div class="offer-content">
+                    <div class="offer-text">
+                        <span class="offer-badge">Exclusive Access</span>
+                        <h2>Premium Models</h2>
+                        <h1>Unlock All</h1>
+                        <p>Get unlimited access to all premium models, exclusive content, and special features.</p>
+
+                        <div class="offer-features">
+                            <p><i class="fas fa-check"></i> Access to 500+ Premium Models</p>
+                            <p><i class="fas fa-check"></i> HD & 4K Exclusive Content</p>
+                            <p><i class="fas fa-check"></i> Live Show Priority Access</p>
+                            <p><i class="fas fa-check"></i> Direct Messaging with Models</p>
+                        </div>
+
+                        <a href="premium.html" class="btn btn-premium btn-lg">
+                            <i class="fas fa-crown"></i>
+                            Upgrade to Premium
+                        </a>
+                    </div>
+
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Premium Models Access" 
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <img src="image/wpurb1.png" alt="WebpronU" loading="lazy">
+                            <span></span>
+                        </div>
+                        <p class="footer-description">
+                            Premium adult entertainment platform featuring exclusive content from professional models.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="models.html">Models</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="new.html">New Arrivals</a></li>
+                            <li><a href="trending.html">Trending</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help Center</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="report.html">Report Content</a></li>
+                            <li><a href="age-verification.html">Age Verification</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="cookies.html">Cookie Policy</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe for new model alerts</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-bitcoin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 WebpronU. All rights reserved. Adults only (18+)</p>
+                    <div class="footer-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>This site contains explicit adult content. All models are 18+.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h2>Welcome Back</h2>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" required>
+                        <button type="button" class="show-password" aria-label="Show password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="forgot-password.html">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    <div class="social-auth">
+                        <button type="button" class="btn btn-google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+                    <p class="auth-switch">
+                        Don't have an account? <a href="register.html">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Age verification
+            let ageVerified = localStorage.getItem('ageVerified') === 'true';
+            
+            if (!ageVerified) {
+                document.getElementById('ageVerification').style.display = 'flex';
+            } else {
+                document.getElementById('ageVerification').style.display = 'none';
+                // Hide loader
+                setTimeout(() => {
+                    document.getElementById('loader').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('loader').style.display = 'none';
+                    }, 500);
+                }, 1500);
+            }
+            
+            document.getElementById('confirmAge').addEventListener('click', () => {
+                localStorage.setItem('ageVerified', 'true');
+                document.getElementById('ageVerification').style.display = 'none';
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            });
+            
+            document.getElementById('denyAge').addEventListener('click', () => {
+                window.location.href = 'https://www.google.com';
+            });
+            
+            // Filter functionality
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const viewOptions = document.querySelectorAll('.view-option-btn');
+            const modelCards = document.querySelectorAll('.model-card-large');
+            const searchInput = document.getElementById('model-search');
+            
+            // Filter tags
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter logic here
+                    const filterValue = this.textContent.toLowerCase();
+                    console.log(`Filtering by: ${filterValue}`);
+                });
+            });
+            
+            // View options
+            viewOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    viewOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const viewType = this.dataset.view;
+                    const modelsGrid = document.getElementById('modelsGrid');
+                    
+                    if (viewType === 'list') {
+                        modelsGrid.classList.add('list-view');
+                        // Add list view CSS class
+                    } else {
+                        modelsGrid.classList.remove('list-view');
+                    }
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                modelCards.forEach(card => {
+                    const modelName = card.querySelector('.model-name').textContent.toLowerCase();
+                    const modelUsername = card.querySelector('.model-username').textContent.toLowerCase();
+                    const modelTags = Array.from(card.querySelectorAll('.model-tag')).map(tag => tag.textContent.toLowerCase());
+                    
+                    const matches = modelName.includes(searchTerm) || 
+                                   modelUsername.includes(searchTerm) ||
+                                   modelTags.some(tag => tag.includes(searchTerm));
+                    
+                    card.style.display = matches ? 'block' : 'none';
+                });
+            });
+            
+            // Model card actions
+            modelCards.forEach(card => {
+                const favoriteBtn = card.querySelector('.action-btn-small');
+                if (favoriteBtn) {
+                    favoriteBtn.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        const icon = this.querySelector('i');
+                        if (this.classList.contains('active')) {
+                            icon.className = 'fas fa-heart';
+                            icon.style.color = 'var(--primary)';
+                        } else {
+                            icon.className = 'fas fa-heart';
+                            icon.style.color = '';
+                        }
+                    });
+                }
+            });
+            
+            // Pagination
+            const paginationNumbers = document.querySelectorAll('.pagination-number');
+            paginationNumbers.forEach(number => {
+                number.addEventListener('click', function() {
+                    paginationNumbers.forEach(n => n.classList.remove('active'));
+                    this.classList.add('active');
+                    // Pagination logic here
+                });
+            });
+            
+            // Login modal
+            const loginBtn = document.getElementById('login-btn');
+            const loginModal = document.getElementById('login-modal');
+            const modalClose = loginModal.querySelector('.modal-close');
+            
+            loginBtn.addEventListener('click', () => {
+                loginModal.classList.add('active');
+            });
+            
+            modalClose.addEventListener('click', () => {
+                loginModal.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside
+            loginModal.addEventListener('click', (e) => {
+                if (e.target === loginModal) {
+                    loginModal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
